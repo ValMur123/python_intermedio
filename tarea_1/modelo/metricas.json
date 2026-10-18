@@ -1,0 +1,27 @@
+{
+  "f1_macro_test": 0.875,
+  "accuracy_test": 0.8769,
+  "f1_macro_zero_shot": 0.5422,
+  "f1_macro_llm_test": 0.902,
+  "acuerdo_llm_humano": "19/20",
+  "n_noticias": 433,
+  "n_test": 65,
+  "modelo_base": "dccuchile/bert-base-spanish-wwm-cased",
+  "modelo_llm": "gemini-flash-latest",
+  "f1_por_categoria": {
+    "politica": 0.9444,
+    "economia": 0.8235,
+    "deportes": 0.875,
+    "ciencia_tecnologia": 0.8571
+  },
+  "modelos_probados": [
+    {
+      "Modelo": "BETO (español)",
+      "F1 macro (validación)": 0.954
+    },
+    {
+      "Modelo": "ModernBERT (clase 2)",
+      "F1 macro (validación)": 0.733
+    }
+  ]
+}

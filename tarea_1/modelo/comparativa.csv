@@ -1,0 +1,4 @@
+﻿Enfoque,Evaluado en,Accuracy,F1 macro,Latencia (s/titular),Costo,Requiere internet
+Zero-shot (BERT español XNLI),40 titulares de test,0.575,0.542,0.49,"Gratis, local",No
+LLM (gemini-flash-latest),65 titulares de test,0.908,0.902,3.614,"Cuota gratuita limitada (errores 503/429); de pago al escalar (≈16,722 tokens de entrada para 433 titulares)",Sí
+BETO (español) fine-tuned,65 titulares de test,0.877,0.875,0.061,Entrenamiento único; uso local gratuito,No
