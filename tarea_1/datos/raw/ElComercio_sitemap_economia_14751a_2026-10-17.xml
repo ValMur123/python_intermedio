@@ -49,30 +49,6 @@
     <changefreq>hourly</changefreq>
   </url>
   <url>
-    <loc>https://elcomercio.pe/economia/dia-1/grupo-maquinarias-espera-cerrar-el-ano-con-5300-unidades-vendidas-noticia/</loc>
-    <lastmod>2026-10-17T06:15:00-05:00</lastmod>
-    <news:news>
-      <news:publication>
-        <news:name>El Comercio</news:name>
-        <news:language>es</news:language>
-      </news:publication>
-      <news:publication_date>2026-10-17T06:15:00-05:00</news:publication_date>
-      <news:title>
-        <![CDATA[Grupo Maquinarias espera cerrar el año con 5.300 unidades vendidas: Nissan, venta de seminuevos y su estrategia]]>
-      </news:title>
-      <news:keywords>
-        <![CDATA[Autos,Mercado vehicular,Maquinarias,Nissan,Seminuevos]]>
-      </news:keywords>
-    </news:news>
-    <image:image>
-      <image:loc>https://elcomercio.pe/resizer/v2/E4IJW6SBOZBI5JANSB6VVNH4HY.png?auth=6617185c1c8754fe379b8199d9106f80610b0b9046c549254c04749fbe5bc642&amp;width=1200&amp;height=600&amp;quality=90&amp;smart=true</image:loc>
-      <image:title>
-        <![CDATA[(Foto: Maquinarias)]]>
-      </image:title>
-    </image:image>
-    <changefreq>hourly</changefreq>
-  </url>
-  <url>
     <loc>https://elcomercio.pe/economia/opinion/alacena-no-tiene-precio-noticia/</loc>
     <lastmod>2026-10-17T06:15:00-05:00</lastmod>
     <news:news>
@@ -92,6 +68,30 @@
       <image:loc>https://elcomercio.pe/resizer/v2/6BH5ILCQ3ZC3NJMQ3YMOA5RDYM.JPG?auth=4d86b054fe42154676b7649a9759b6d2cbdec07872aaf4b716cbc08c6adef342&amp;width=1200&amp;height=600&amp;quality=90&amp;smart=true</image:loc>
       <image:title>
         <![CDATA[Alacena]]>
+      </image:title>
+    </image:image>
+    <changefreq>hourly</changefreq>
+  </url>
+  <url>
+    <loc>https://elcomercio.pe/economia/dia-1/grupo-maquinarias-espera-cerrar-el-ano-con-5300-unidades-vendidas-noticia/</loc>
+    <lastmod>2026-10-17T06:15:00-05:00</lastmod>
+    <news:news>
+      <news:publication>
+        <news:name>El Comercio</news:name>
+        <news:language>es</news:language>
+      </news:publication>
+      <news:publication_date>2026-10-17T06:15:00-05:00</news:publication_date>
+      <news:title>
+        <![CDATA[Grupo Maquinarias espera cerrar el año con 5.300 unidades vendidas: Nissan, venta de seminuevos y su estrategia]]>
+      </news:title>
+      <news:keywords>
+        <![CDATA[Autos,Mercado vehicular,Maquinarias,Nissan,Seminuevos]]>
+      </news:keywords>
+    </news:news>
+    <image:image>
+      <image:loc>https://elcomercio.pe/resizer/v2/E4IJW6SBOZBI5JANSB6VVNH4HY.png?auth=6617185c1c8754fe379b8199d9106f80610b0b9046c549254c04749fbe5bc642&amp;width=1200&amp;height=600&amp;quality=90&amp;smart=true</image:loc>
+      <image:title>
+        <![CDATA[(Foto: Maquinarias)]]>
       </image:title>
     </image:image>
     <changefreq>hourly</changefreq>
@@ -1777,30 +1777,6 @@
     <changefreq>hourly</changefreq>
   </url>
   <url>
-    <loc>https://elcomercio.pe/economia/opinion/la-evolucion-de-la-confianza-en-los-pagos-por-nuno-lopes-alves-visa-opinion-noticia/</loc>
-    <lastmod>2026-10-15T20:05:00-05:00</lastmod>
-    <news:news>
-      <news:publication>
-        <news:name>El Comercio</news:name>
-        <news:language>es</news:language>
-      </news:publication>
-      <news:publication_date>2026-10-15T20:05:00-05:00</news:publication_date>
-      <news:title>
-        <![CDATA[La evolución de la confianza en los pagos]]>
-      </news:title>
-      <news:keywords>
-        <![CDATA[Visa,pagos con tarjeta,opinión,Nuno Lopes Alves]]>
-      </news:keywords>
-    </news:news>
-    <image:image>
-      <image:loc>https://elcomercio.pe/resizer/v2/B44HVEIGXBAPPPCW2LV6E3DMUI.jpg?auth=5e6ce03a0a2e85cf9b6ecebfab93a65858fb41d2082d41acecb84535669a3179&amp;width=1200&amp;height=600&amp;quality=90&amp;smart=true</image:loc>
-      <image:title>
-        <![CDATA[Pagos]]>
-      </image:title>
-    </image:image>
-    <changefreq>hourly</changefreq>
-  </url>
-  <url>
     <loc>https://elcomercio.pe/economia/opinion/la-gloria-gastronomica-que-debemos-multiplicar-noticia/</loc>
     <lastmod>2026-10-15T20:00:00-05:00</lastmod>
     <news:news>
@@ -1820,6 +1796,30 @@
       <image:loc>https://elcomercio.pe/resizer/v2/U4ZQODNQXJGALNHDI6TIVKF7YE.JPG?auth=9484fa26dd9e26bad37c20c3393587470f9cc061a11ddb92856395b8dd8cbde0&amp;width=1200&amp;height=600&amp;quality=90&amp;smart=true</image:loc>
       <image:title>
         <![CDATA[The 50 Best Restaurants reunirá en Lima a 1,200 referentes de la gastronomía mundial]]>
+      </image:title>
+    </image:image>
+    <changefreq>hourly</changefreq>
+  </url>
+  <url>
+    <loc>https://elcomercio.pe/economia/opinion/la-evolucion-de-la-confianza-en-los-pagos-por-nuno-lopes-alves-visa-opinion-noticia/</loc>
+    <lastmod>2026-10-15T20:05:00-05:00</lastmod>
+    <news:news>
+      <news:publication>
+        <news:name>El Comercio</news:name>
+        <news:language>es</news:language>
+      </news:publication>
+      <news:publication_date>2026-10-15T20:05:00-05:00</news:publication_date>
+      <news:title>
+        <![CDATA[La evolución de la confianza en los pagos]]>
+      </news:title>
+      <news:keywords>
+        <![CDATA[Visa,pagos con tarjeta,opinión,Nuno Lopes Alves]]>
+      </news:keywords>
+    </news:news>
+    <image:image>
+      <image:loc>https://elcomercio.pe/resizer/v2/B44HVEIGXBAPPPCW2LV6E3DMUI.jpg?auth=5e6ce03a0a2e85cf9b6ecebfab93a65858fb41d2082d41acecb84535669a3179&amp;width=1200&amp;height=600&amp;quality=90&amp;smart=true</image:loc>
+      <image:title>
+        <![CDATA[Pagos]]>
       </image:title>
     </image:image>
     <changefreq>hourly</changefreq>
