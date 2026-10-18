@@ -90,3 +90,57 @@ if acuerdo:
               help=f"{acuerdo} titulares coincidieron")
 else:
     c3.metric("Concordancia LLM vs. auditoría humana", "—")
+ # ---------------- Paso 4: gráfico y tabla (responden a los filtros) ----------------
+col_g, col_t = st.columns([1, 1.4])
+
+with col_g:
+    # Título analítico: dice la conclusión, no solo la variable
+    if len(filtrado):
+        top = filtrado["categoria"].value_counts()
+        titulo = f"{top.index[0]} lidera la selección con {top.iloc[0]} noticias ({top.iloc[0] / len(filtrado):.0%})"
+    else:
+        titulo = "Sin noticias para los filtros elegidos"
+    datos_graf = filtrado.groupby(["categoria", "medio"]).size().reset_index(name="n")
+    fig = px.bar(datos_graf, x="n", y="categoria", color="medio", barmode="group", orientation="h",
+                 text_auto=True, title=titulo,
+                 labels={"categoria": "", "n": "Noticias", "medio": "Medio"})
+    fig.update_traces(textposition="outside", cliponaxis=False)
+    fig.update_layout(legend=dict(orientation="h", y=-0.2), yaxis=dict(categoryorder="total ascending"))
+    st.plotly_chart(fig, width="stretch")
+
+with col_t:
+    st.subheader("Explorar noticias")
+    columnas = ["titular", "bajada", "medio", "seccion_original", "fecha", "etiqueta", "url"]
+    st.dataframe(filtrado[columnas], width="stretch", height=380,
+                 column_config={"url": st.column_config.LinkColumn("url")})
+    st.download_button("⬇️ Descargar CSV filtrado",
+                       filtrado[columnas].to_csv(index=False).encode("utf-8-sig"),
+                       file_name="noticias_filtradas.csv", mime="text/csv")   
+    
+# ---------------- Resultados del modelo ----------------
+st.divider()
+st.header("📊 ¿Qué tan bien clasifica?")
+col_c, col_m = st.columns([1.3, 1])
+
+with col_c:
+    if os.path.exists(RUTA_COMPARATIVA):
+        st.markdown("**Comparación en el test reservado**")
+        st.dataframe(pd.read_csv(RUTA_COMPARATIVA, encoding="utf-8-sig"), width="stretch", hide_index=True)
+    if met.get("f1_por_categoria"):
+        f1c = pd.DataFrame({"categoria": [NOMBRES.get(k, k) for k in met["f1_por_categoria"]],
+                            "F1": list(met["f1_por_categoria"].values())}).sort_values("F1")
+        mejor, peor = f1c.iloc[-1], f1c.iloc[0]
+        fig_c = px.bar(f1c, x="F1", y="categoria", orientation="h", range_x=[0, 1],
+                       text=f1c["F1"].map("{:.2f}".format), labels={"categoria": ""},
+                       title=f"{mejor['categoria']} es la más fácil (F1 {mejor['F1']:.2f}); "
+                             f"{peor['categoria']} la más difícil ({peor['F1']:.2f})")
+        fig_c.update_layout(height=300)
+        st.plotly_chart(fig_c, width="stretch")
+
+with col_m:
+    if os.path.exists(RUTA_MATRIZ):
+        st.image(RUTA_MATRIZ, caption="Matriz de confusión en el test (etiqueta del diario vs. predicción)")
+
+if "etiqueta_llm" in df.columns:
+    st.caption(f"El LLM coincide con la sección del diario en el {(df['etiqueta_llm'] == df['etiqueta']).mean():.1%} "
+               "de los titulares; las diferencias suelen ser titulares que mezclan temas (p. ej. política y economía).")
