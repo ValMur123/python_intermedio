@@ -144,3 +144,46 @@ with col_m:
 if "etiqueta_llm" in df.columns:
     st.caption(f"El LLM coincide con la sección del diario en el {(df['etiqueta_llm'] == df['etiqueta']).mean():.1%} "
                "de los titulares; las diferencias suelen ser titulares que mezclan temas (p. ej. política y economía).")
+
+
+# ---------------- Paso 5: probador en vivo ----------------
+@st.cache_resource(show_spinner="Cargando el modelo BETO…")   # carga el modelo una sola vez
+def cargar_clasificador():
+    from transformers import pipeline
+    return pipeline("text-classification", model=MODELO_LOCAL, tokenizer=MODELO_LOCAL, top_k=None)
+
+
+st.divider()
+st.header("🔎 Prueba el clasificador")
+titular = st.text_input("Escribe o pega un titular",
+                        placeholder="Ej.: BCR mantiene su tasa de referencia por tercer mes consecutivo")
+
+if st.button("Clasificar", type="primary"):
+    if not titular.strip():
+        st.warning("Escribe un titular primero.")
+    else:
+        try:
+            clf = cargar_clasificador()
+            salida = clf(titular.strip())
+            salida = salida[0] if isinstance(salida[0], list) else salida     # lista de {label, score}
+            probs = pd.DataFrame(salida).sort_values("score", ascending=False)
+            probs["categoria"] = probs["label"].map(NOMBRES).fillna(probs["label"])
+            ganador = probs.iloc[0]
+
+            st.success(f"**{ganador['categoria']}** · probabilidad {ganador['score']:.1%}")
+            if ganador["score"] < 0.6:
+                st.info("Confianza baja: el titular podría pertenecer a más de una categoría.")
+
+            fig_p = px.bar(probs, x="score", y="categoria", orientation="h", range_x=[0, 1],
+                           text=probs["score"].map("{:.1%}".format),
+                           labels={"score": "Probabilidad", "categoria": ""})
+            fig_p.update_layout(height=260, yaxis=dict(autorange="reversed"))
+            st.plotly_chart(fig_p, width="stretch")
+        except Exception as e:
+            st.error("No se pudo cargar el modelo. Ejecuta primero `02_clasificacion.ipynb`, que guarda el "
+                     f"modelo en `modelo/`. Detalle: {type(e).__name__}: {e}")
+
+st.divider()
+st.caption("Fuente: RSS y sitemaps oficiales de La República y El Comercio (octubre de 2026). Etiquetas débiles con "
+           "Gemini; modelo BETO (dccuchile/bert-base-spanish-wwm-cased) ajustado. "
+           "Tarea 1 · Python Intermedio · QLAB PUCP · Valeria Murga.")
