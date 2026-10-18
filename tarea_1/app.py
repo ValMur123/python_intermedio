@@ -68,3 +68,25 @@ filtrado = df[df["medio"].isin(medios) & df["categoria"].isin(cats)]
 if buscar.strip():
     filtrado = filtrado[filtrado["titular"].str.contains(buscar.strip(), case=False, na=False, regex=False)]
 st.sidebar.caption(f"{len(filtrado)} de {len(df)} noticias seleccionadas")
+
+# ---------------- Paso 3: indicadores clave (st.metric) ----------------
+c1, c2, c3 = st.columns(3)
+
+# 1) Total de noticias recolectadas
+c1.metric("Noticias recolectadas", f"{len(df)}",
+          help=f"{len(filtrado)} con los filtros actuales")
+
+# 2) F1 macro del modelo en el test (y cuánto mejora frente al zero-shot)
+f1 = met.get("f1_macro_test")
+f1_zs = met.get("f1_macro_zero_shot")
+c2.metric("F1 macro en test", f"{f1:.2f}" if f1 is not None else "—",
+          delta=f"{f1 - f1_zs:+.2f} vs. zero-shot" if f1 is not None and f1_zs is not None else None)
+
+# 3) Concordancia entre el LLM y la auditoría humana (viene como "19/20")
+acuerdo = met.get("acuerdo_llm_humano")
+if acuerdo:
+    a, b = map(int, acuerdo.split("/"))
+    c3.metric("Concordancia LLM vs. auditoría humana", f"{a / b:.0%}",
+              help=f"{acuerdo} titulares coincidieron")
+else:
+    c3.metric("Concordancia LLM vs. auditoría humana", "—")
