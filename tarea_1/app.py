@@ -54,3 +54,17 @@ oficiales, los etiqueté en 4 categorías (**política, economía, deportes, cie
 test que el modelo nunca vio. Más abajo puedes escribir cualquier titular para probarlo en vivo.
 """
 )
+
+# ---------------- Paso 2: filtros en la barra lateral ----------------
+st.sidebar.header("Filtros")
+medios = st.sidebar.multiselect("Medio", sorted(df["medio"].unique()),
+                                default=sorted(df["medio"].unique()))
+cats = st.sidebar.multiselect("Categoría", list(NOMBRES.values()),
+                              default=list(NOMBRES.values()))
+buscar = st.sidebar.text_input("Buscar en titulares", placeholder="Ej.: Congreso, BCR, Alianza")
+
+# Tabla filtrada: la usan el gráfico y la tabla que vienen después
+filtrado = df[df["medio"].isin(medios) & df["categoria"].isin(cats)]
+if buscar.strip():
+    filtrado = filtrado[filtrado["titular"].str.contains(buscar.strip(), case=False, na=False, regex=False)]
+st.sidebar.caption(f"{len(filtrado)} de {len(df)} noticias seleccionadas")
