@@ -14,6 +14,7 @@ BASE = Path(__file__).resolve().parent
 DATOS = BASE / "datos"
 EJEMPLOS = DATOS / "ejemplos"
 
+
 st.set_page_config(page_title="Voces y documentos peruanos", page_icon="📜", layout="wide")
 
 
@@ -213,4 +214,5 @@ with tab_aud:
 
 st.divider()
 st.caption("Fuentes y licencias de cada archivo: datos/fuentes.csv · Código de voz.py: Sesión 13 del curso (d2cml-ai/Data-Science-Python, MIT).")
+
 
