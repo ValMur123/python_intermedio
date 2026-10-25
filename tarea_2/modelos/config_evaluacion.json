@@ -1,0 +1,28 @@
+{
+ "fecha": "2026-10-24",
+ "semilla": 2026,
+ "muestra_docs": [
+  "doc_008",
+  "doc_002",
+  "doc_007",
+  "doc_014",
+  "doc_015",
+  "doc_016",
+  "doc_024",
+  "doc_020",
+  "doc_025",
+  "doc_022"
+ ],
+ "muestra_audio": [
+  "clip_007",
+  "clip_002",
+  "clip_004",
+  "clip_021",
+  "clip_016",
+  "clip_020",
+  "clip_024",
+  "clip_009",
+  "clip_022",
+  "clip_018"
+ ]
+}
