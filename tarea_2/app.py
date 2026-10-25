@@ -1,5 +1,6 @@
 """Dashboard de la Tarea 2: documentos (OCR) y audios (ASR) peruanos convertidos en texto buscable.
 
+
 Solo lee los CSV generados en 01_extraccion.ipynb y 02_evaluacion.ipynb: no ejecuta OCR, ASR ni LLM.
 Ejecutar en local:  streamlit run app.py
 """
@@ -214,5 +215,3 @@ with tab_aud:
 
 st.divider()
 st.caption("Fuentes y licencias de cada archivo: datos/fuentes.csv · Código de voz.py: Sesión 13 del curso (d2cml-ai/Data-Science-Python, MIT).")
-
-
