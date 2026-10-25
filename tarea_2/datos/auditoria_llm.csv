@@ -1,0 +1,245 @@
+﻿id;modalidad;tema;resumen;emisor;fecha;monto;citas_clave;numero_hablantes;texto_fuente (primeros 400 caracteres);campos_json;correcto;error
+doc_004;documento;noticias;El texto contiene noticias sobre la muerte de Adolf Hitler y la designación de Karl Doenitz como sucesor. Se menciona la toma de Munich, la lucha contra el bolchevismo y la formación de tropas.;;Lima, martes 1 de mayo de 1945;;;;"El Comercio
+latersura
+JABON IMPERIAL
+ara
+de sa cutis..
+sin igual
+LECHEdeALMENDRAS
+andra
+EDICION EXTRAORDINARIA
+ 1N 1
+Aurelio Miró Quesada
+Direcier
+SUSCRIPCIONES EN PROVINCIAS
+ 55,622
+Trimesire: 8/e. 21.00
+LIMA. MARTES I* DE MAYO DE 1945
+EN EL EXTRANJERO
+Al Semestre: /e. 65.09
+Luis Mito Quesada
+Director
+4 PAGINAS
+15 Cts.
+HA MUERTO ADOLFO HITLER
+L ALMIRANTE DOENITZ, SUCESOR DE HITLER HIZO
+ANUNCIO PO";"{""modalidad"": ""documento"", ""tema"": ""noticias"", ""resumen"": ""El texto contiene noticias sobre la muerte de Adolf Hitler y la designación de Karl Doenitz como sucesor. Se menciona la toma de Munich, la lucha contra el bolchevismo y la formación de tropas."", ""emisor"": null, ""fecha"": ""Lima, martes 1 de mayo de 1945"", ""monto"": null, ""citas_clave"": null, ""numero_hablantes"": null}";no;emisor vacío (El Comercio está en la cabecera)
+doc_017;documento;restaurante;El texto parece una lista de platos del restaurante con nombres en español peruano.;;;;;;"LOCES SE
+EMERGENCIA
+Aquí aceptamos
+TODAS las tarjetas
+RESTAURANTE CRIOLLO
+pay
+SAZON
+MULATA
+Soph  Moron
+13
+COVID-19
+lada D'PAltA
+USO OBLIGATORIO
+DEALCOHOL
+frito cifrijoles
+ENGEL
+won D' Pollo
+HAdo D Coliflor
+canteDCArne
+PArrilla
+friyol
+PIanCHA
+Higaclo
+Papa
+CHuleta
+Pescado
+Ensalada
+Haufa
+MoJito
+no Saltado
+arin Saltado
+anesa
+CUBA
+Bistec
+Pollo-frito
+LIBRE
+Bronster
+Mostvito
+Arvo alaCuban
+Ropa VieJA
+ALIT";"{""modalidad"": ""documento"", ""tema"": ""restaurante"", ""resumen"": ""El texto parece una lista de platos del restaurante con nombres en español peruano."", ""emisor"": null, ""fecha"": null, ""monto"": null, ""citas_clave"": null, ""numero_hablantes"": null}";no;revisa la pizarra: el OCR leyó “SAZON MULATA”, así que el emisor sí está. Si no hay precios, pon emisor vacío (Sazón Mulata está en la pizarra)
+doc_020;documento;menú;RESTAURANTE;;;;;;"VEGETARIANO
+RESTAURANTE
+1/16.00
+MENÚ
+ESPECIAL
+17.00 P.llevor
+* HUEVO.A LA RUSA.
+*CHUPE DE ZAPALLITO.I..
+GUISO DE QUINUA I BISTECK.
+*SEGUNDO
+5/20.00
+EJECUTIVO
+MENÚ
+/21.00 P.tho
+ENTRADA :
+*CAUSA RELIENA.O
+ENSALADA MIXTA  FRUTA.
+SOLTERITO DE CHOCLO.
+CHUPE DE ZAPALLITO ITALIANO
+SEGUNDO:
+CHAUFA
+A LA JARDINERA.
+en
+ESCABECHE DE TOFU.
+TALLARIN SALTADO CON CARNE.
+MILANESA CON ARRO2 Y ENSALADA.O";"{""modalidad"": ""documento"", ""tema"": ""menú"", ""resumen"": ""RESTAURANTE"", ""emisor"": null, ""fecha"": null, ""monto"": null, ""citas_clave"": null, ""numero_hablantes"": null}";no;"resumen de una sola palabra; monto vacío aunque hay precios"
+doc_018;documento;vectores y multiplicación de vectores;Se describen dos vectores en R3 y se muestra la suma y la multiplicación de estos vectores.;;;;;;"TARED EN CHADJE:
+1. Do) vectores de R3
+a:=(3,5,7.5)
+5:=(8,10,20)
+2. JumAr Vecronts y Mulriplicon vecrenes
+a+b:=(11,15,27.5)
+35:=(24,30,60)";"{""modalidad"": ""documento"", ""tema"": ""vectores y multiplicación de vectores"", ""resumen"": ""Se describen dos vectores en R3 y se muestra la suma y la multiplicación de estos vectores."", ""emisor"": null, ""fecha"": null, ""monto"": null, ""citas_clave"": null, ""numero_hablantes"": null}";si;
+doc_016;documento;Niñez;hoy no regresa;;;;;;"Ponte en
+Tiempo de
+El
+#Modo
+Niñez
+hoy no regresa.
+rie, juega y comparte
+Municipalidad de
+Ministerio
+Gobierno del Perú
+Jesús María
+PERÚ
+de la Mujer y
+Poblaciones Vulnerables";"{""modalidad"": ""documento"", ""tema"": ""Niñez"", ""resumen"": ""hoy no regresa"", ""emisor"": null, ""fecha"": null, ""monto"": null, ""citas_clave"": null, ""numero_hablantes"": null}";no;resumen de 3 palabras, emisor vacío
+doc_010;documento;menú;El menú incluye una variedad de platos de chifa, como arroz chaufa, tallarín, combinados y más, con precios variados.;;;;;;"Chifa Central
+MENÚ PERSONAL
+Entradas: Sopa Wantán, Wantán Frito
+1. ARROZ CHAUFA DE POLLO
+2. ARROZ CHAUFA DE CHANCHO
+S/ 14.00
+3. ARROZ CHAUFA DE CARNE DE RES
+S/ 16.00
+4. ARROZ CHAUFA ESPECIAL
+S/ 18.00
+5. TALLARÍN CON POLLO
+S/ 20.00
+6. TALLARÍN CON CHANCHO
+S/ 15.50
+7. TALLARÍN CON CARNE DE RES
+S/ 17.50
+8. TALLARÍN CON POLLO EN TROZOS
+S/ 18.50
+9. TALLARÍN ESPECIAL
+S/ 20.00
+10. TALLARÍN TAYPA
+S/ 21.00";"{""modalidad"": ""documento"", ""tema"": ""menú"", ""resumen"": ""El menú incluye una variedad de platos de chifa, como arroz chaufa, tallarín, combinados y más, con precios variados."", ""emisor"": null, ""fecha"": null, ""monto"": null, ""citas_clave"": null, ""numero_hablantes"": null}";no;emisor y monto vacíos aunque están en el menú
+doc_005;documento;noticias;La noticia menciona varios cargamentos de barcos que serán enviados a diferentes destinos, incluyendo Puerto del Callao, América, América del Sur, y México. Se mencionan detalles sobre los barcos y sus capitán. También se menciona la publicación del diario 'El Comercio' y su dirección.;;Llma, Sabado 4 de Mayo de 1839;;;;"Eato periidion se doepaenn dn este Capltal
+Lre svine qoé deben spir an ret
+das, y en la Detiem lagleaa calie de la Men-
+ssrie al de so publiraciro, ab nando o
+sa aates de lue custro de la sando del dia an
+nelnlscado el
+ndicaraa los SS. Buicoiptoeds y to pagara
+ORDEN. LIBERTAD.
+Precio.
+SABER.
+como los comticai-a s-ber malerias pee-
+La sviños que peren de d oe lipwna saí
+tículares, ragarin por segar";"{""modalidad"": ""documento"", ""tema"": ""noticias"", ""resumen"": ""La noticia menciona varios cargamentos de barcos que serán enviados a diferentes destinos, incluyendo Puerto del Callao, América, América del Sur, y México. Se mencionan detalles sobre los barcos y sus capitán. También se menciona la publicación del diario 'El Comercio' y su dirección."", ""emisor"": null, ""fecha"": ""Llma, Sabado 4 de Mayo de 1839"", ""monto"": null, ""citas_clave"": null, ""numero_hablantes"": null}";no;emisor vacío (El Comercio)
+doc_009;documento;Centro Neurológico Santiago Ramón y Cajal;El texto proporciona información sobre los servicios y especialidades del Centro Neurológico Santiago Ramón y Cajal, incluyendo sus especialidades, procedimientos, y ubicación.;;;;;;"Centro Neurológico
+Santiago Ramón y Cajal
+EXPERTOS EN NEUROLOGÍA
+Especialidades:
+AGENDA TUCITA
+·Neurocirugia
+CONNOSOTROS
+·Psiquiatría
+913128834
+·Neuropsicologia
+·Neuropediatría
+·Medicina Física
+·Neumología
+·Medicina Familiar
+.Cardiología
+Procedimientos:
+·Electromiografía y
+Neuroconducción
+·Potenciales evocados
+visuales y auditivos
+Electroencefalograma
+·Toxina Botulínica
+Certificado Neurológico
+y d";"{""modalidad"": ""documento"", ""tema"": ""Centro Neurológico Santiago Ramón y Cajal"", ""resumen"": ""El texto proporciona información sobre los servicios y especialidades del Centro Neurológico Santiago Ramón y Cajal, incluyendo sus especialidades, procedimientos, y ubicación."", ""emisor"": null, ""fecha"": null, ""monto"": null, ""citas_clave"": null, ""numero_hablantes"": null}";no;emisor vacío
+doc_012;documento;Trastornos del Neurodesarrollo y Psicoment;Terapias Integrales;;;;;;"Especialistas en Trastornos
+del Neurodesarrollo y
+PSICOMENT
+Terapias Integrales
+Psicología
+Neuropediatría
+Neuropsicología
+Psiquiatría
+NUESTROS
+SERVICIOS
+Evaluación:
+Psicológica
+Neuropsicológica
+Psiquiátrica
+Neuropediátrica
+Bienvenidos a
+PSI OMENT
+Descarte TEA
+Sensorial
+Terapia:
+De lenguaje y comunicación
+Ocupacional/Sensorial
+Conductual
+Estimulación cognitiva
+Psicomotriz
+2°
+Atención y concentració";"{""modalidad"": ""documento"", ""tema"": ""Trastornos del Neurodesarrollo y Psicoment"", ""resumen"": ""Terapias Integrales"", ""emisor"": null, ""fecha"": null, ""monto"": null, ""citas_clave"": null, ""numero_hablantes"": null}";no;"resumen muy corto; emisor vacío aunque el afiche es de Psicoment"
+doc_019;documento;;;;;;;;"C) Encontrar X
+△x+2BA=AtBt
+Propiedadde latramypuesta:(BA)=AB
+4x=(BA^t2BA
+Para la transpuesta de BA:
+23
+19
+BD=
+16
+-5
+(BA)t=[23
+—5
+19
+16
+Reemplazar (BA)6
+-5 16
+19 16
+-46
+23-5
+38
+4x=
+32
+-10
+4x=
+-437
+-16
+29
+-23
+-43
+x=
+4
+4
+29
+—4
+4";"{""modalidad"": ""documento"", ""tema"": """", ""resumen"": """", ""emisor"": null, ""fecha"": null, ""monto"": null, ""citas_clave"": null, ""numero_hablantes"": null}";no;"tema y resumen vacíos (son obligatorios; la hoja tiene apuntes de matemáticas)"
+clip_004;audio;entrevista deportiva;La entrevista discute sobre el fútbol como un factor de unión de masas. [PERSONA_2] menciona que el fútbol es un resultado del mismo resultado. [PERSONA_1] explica que el fútbol es un deporte que apasiona a todos los peruanos, tanto en el país como fuera de él. [PERSONA_2] añade que el fútbol une a toda la familia y a todas las amistades. [HABLANTE_4] agradece y [HABLANTE_1] finaliza la entrevista.;;;;2-0 | El fútbol es un deporte que apasiona a todos los peruanos | El deporte hace que la gente se una | Todos sean unidos | El deporte siga adelante;4.0;[HABLANTE_1] Con la siguiente señorita Señora [HABLANTE_2]  [PERSONA_2]	 También 2-0 Ojalá que sea 2-0 [HABLANTE_1] Veo que ambas Han dicho el mismo resultado Y esperemos que sea así Y la última pregunta ¿Qué opina del fútbol acerca Como factor de unión de masas? [HABLANTE_3]  [PERSONA_1] El fútbol es un deporte Que apasiona a todos los peruanos Tanto como fuera del país también Y es un deporte qu;"{""modalidad"": ""audio"", ""tema"": ""entrevista deportiva"", ""resumen"": ""La entrevista discute sobre el fútbol como un factor de unión de masas. [PERSONA_2] menciona que el fútbol es un resultado del mismo resultado. [PERSONA_1] explica que el fútbol es un deporte que apasiona a todos los peruanos, tanto en el país como fuera de él. [PERSONA_2] añade que el fútbol une a toda la familia y a todas las amistades. [HABLANTE_4] agradece y [HABLANTE_1] finaliza la entrevista."", ""emisor"": null, ""fecha"": null, ""monto"": null, ""citas_clave"": [""2-0"", ""El fútbol es un deporte que apasiona a todos los peruanos"", ""El deporte hace que la gente se una"", ""Todos sean unidos"", ""El deporte siga adelante""], ""numero_hablantes"": 4}";no;"frase sin sentido (""el fútbol es un resultado del mismo resultado""); numero_hablantes 4 y menciona [HABLANTE_4], que no aparece en el texto"
+clip_016;audio;discusion sobre películas, música y ejercicio;La persona habla sobre ir al cine con su esposa, la película El Pijama de Rayas, la música de los noventa, y su deseo de comenzar a hacer ejercicio. También menciona una reunión de negocios y que alguien está enviando links de meditaciones en YouTube.;;;;;;Este fin de semana voy a ir al cine con mi esposa. ¿Es verdad que usaron perros de verdad en la película? El pijama de rayas es azul. ¿Habrá alguna película que sea una historia romántica con acción? Me gustaría reservar para dos personas, ¿puede ser? ¿Puedes recomendarme música que sea de los noventas? Traigo muchas ganas de comenzar a hacer ejercicio. Se usa para incitar a alguien a sacar el may;"{""modalidad"": ""audio"", ""tema"": ""discusion sobre películas, música y ejercicio"", ""resumen"": ""La persona habla sobre ir al cine con su esposa, la película El Pijama de Rayas, la música de los noventa, y su deseo de comenzar a hacer ejercicio. También menciona una reunión de negocios y que alguien está enviando links de meditaciones en YouTube."", ""emisor"": null, ""fecha"": null, ""monto"": null, ""citas_clave"": null, ""numero_hablantes"": null}";no;"interpreta ""el pijama de rayas es azul"" como la película ""El Pijama de Rayas"""
+clip_019;audio;varias conversaciones;La conversación abarca temas como la destrucción de plantaciones, opciones de departamentos, la guerra, la pizza con menos calorías, el uso de un dron, la mecánica industrial, la información nutricional de la pizza vegetariana, y la necesidad de aprender a usar un dron. También menciona una reunión atrasada y una posible lesión médica.;;;;;;La granizada destruyó toda la plantación de lechuga. Estamos buscando diferentes opciones de departamentos. ¿Por qué empezó la guerra? ¿Cuál es la pizza que tiene menos calorías? Me acabo de comprar un dron, pero no tengo idea de cómo armarlo. Si tiene con qué apuntar, yo le voy a ir dando la receta. Me gustaría organizar unas charlas sobre mecánica industrial. Su negocio es uno de los más reconoc;"{""modalidad"": ""audio"", ""tema"": ""varias conversaciones"", ""resumen"": ""La conversación abarca temas como la destrucción de plantaciones, opciones de departamentos, la guerra, la pizza con menos calorías, el uso de un dron, la mecánica industrial, la información nutricional de la pizza vegetariana, y la necesidad de aprender a usar un dron. También menciona una reunión atrasada y una posible lesión médica."", ""emisor"": null, ""fecha"": null, ""monto"": null, ""citas_clave"": null, ""numero_hablantes"": null}";si;
+clip_017;audio;;;;;;;;Lo primero que tiene que hacer es mantener la calma. Necesito prácticamente un curso express. No te entiendo nada. ¿Te gusta el vino? Es importante que manejes bien la letra E. Es muy fácil reguardar su hogar de los huracanes. Es muy importante la parte gutural con la R. Verifique su instalación eléctrica. En el trayecto van a ir acompañados de otros turistas. El tiempo total de viaje es de diez h;"{""modalidad"": ""audio"", ""tema"": """", ""resumen"": """", ""emisor"": null, ""fecha"": null, ""monto"": null, ""citas_clave"": null, ""numero_hablantes"": null}";no;tema y resumen vacíos
+clip_015;audio;Conferencia sobre aseo personal e información sobre parques y conciertos;La conferencia aborda la importancia del aseo personal en el trabajo, prohibición de comer sopa de tortuga por estar en peligro de extinción, y pregunta sobre piscinas olímpicas cerca de la casa de Pedro. Se menciona que Montevideo y Santiago de Chile tienen muchos parques con conciertos gratuitos. Se menciona el helado de pistacho con salsa de frambuesa como postre. Se habla sobre la facilidad de moverse en la zona del centro y la posibilidad de no usar medios de transporte. Se menciona que Raúl ha estado eufórico recientemente. Se pregunta si hay tiendas departamentales cerca de la casa de los padres. Se menciona que la comida italiana se acompaña tradicionalmente con vino rojo. Se expresa que no se entiende nada.;;;;;;La conferencia es sobre la importancia del aseo personal en el trabajo Comer sopa de tortuga está prohibido porque está en peligro de extinción ¿Puedes verificar si hay alguna piscina olímpica cerca de la casa de Pedro? Montevideo tiene muchísimos parques donde hay conciertos gratuitos Santiago de Chile tiene muchísimos parques donde hay conciertos gratuitos De postre voy a servir un helado de pis;"{""modalidad"": ""audio"", ""tema"": ""Conferencia sobre aseo personal e información sobre parques y conciertos"", ""resumen"": ""La conferencia aborda la importancia del aseo personal en el trabajo, prohibición de comer sopa de tortuga por estar en peligro de extinción, y pregunta sobre piscinas olímpicas cerca de la casa de Pedro. Se menciona que Montevideo y Santiago de Chile tienen muchos parques con conciertos gratuitos. Se menciona el helado de pistacho con salsa de frambuesa como postre. Se habla sobre la facilidad de moverse en la zona del centro y la posibilidad de no usar medios de transporte. Se menciona que Raúl ha estado eufórico recientemente. Se pregunta si hay tiendas departamentales cerca de la casa de los padres. Se menciona que la comida italiana se acompaña tradicionalmente con vino rojo. Se expresa que no se entiende nada."", ""emisor"": null, ""fecha"": null, ""monto"": null, ""citas_clave"": null, ""numero_hablantes"": null}";no;"el tema dice que es una conferencia; es una persona leyendo frases sueltas"
+clip_024;audio;vacaciones, aplicaciones, perros, cataratas;La persona habla sobre su interés en irse de vacaciones a Hawái, menciona la duda sobre el volcán activo, el estado de la ciudad, la posibilidad de descargar una aplicación para traducir simultáneamente, su interés en comprar un perro y la comparación entre las cataratas del Niágara en los dos lados de la frontera.;;;;;;Quiero irme de vacaciones a Hawái pero tengo esta duda de si el volcán está activo Todas las apuestas han quedado invalidadas dado que el partido no se pudo llevar a cabo La ciudad es bellísima y tan alegre Me dijeron que hay una aplicación que puedo bajar al celular que me ayuda a traducir simultáneamente Quiero comprar un perro pero la verdad es que no tengo idea de razas La parte de las catarat;"{""modalidad"": ""audio"", ""tema"": ""vacaciones, aplicaciones, perros, cataratas"", ""resumen"": ""La persona habla sobre su interés en irse de vacaciones a Hawái, menciona la duda sobre el volcán activo, el estado de la ciudad, la posibilidad de descargar una aplicación para traducir simultáneamente, su interés en comprar un perro y la comparación entre las cataratas del Niágara en los dos lados de la frontera."", ""emisor"": null, ""fecha"": null, ""monto"": null, ""citas_clave"": null, ""numero_hablantes"": null}";si;
+clip_005;audio;significado del perú y la fiesta de la independencia;Aurora, una residente de la selva central, explica que desde su infancia ha sido inculcada en el amor por su país y la celebración del 28 de julio como día de la independencia. Explica que la tradición de celebrar la independencia incluía festividades, compras de ropa y juguetes. Aurora también menciona que la celebración de la independencia ha disminuido en algunos lugares.;;;;Aurora, una residente de la selva central, explica que desde su infancia ha sido inculcada en el amor por su país y la celebración del 28 de julio como día de la independencia. | Aurora menciona que la celebración de la independencia incluía festividades, compras de ropa y juguetes. | Aurora también menciona que la celebración de la independencia ha disminuido en algunos lugares.;2.0;[HABLANTE_1] bueno ahora estamos en los san martín entre fiestas patrias de julio entonces primero podría comenzar me diciéndome su nombre por favor mi nombre es aurora coronada primera pregunta [HABLANTE_2] para usted para usted qué significa el perú bueno el perú es mi país donde he nacido amo mucho porque acá vivo tengo todo lo que necesito y adoro mi país en mi patria es un territorio donde no;"{""modalidad"": ""audio"", ""tema"": ""significado del perú y la fiesta de la independencia"", ""resumen"": ""Aurora, una residente de la selva central, explica que desde su infancia ha sido inculcada en el amor por su país y la celebración del 28 de julio como día de la independencia. Explica que la tradición de celebrar la independencia incluía festividades, compras de ropa y juguetes. Aurora también menciona que la celebración de la independencia ha disminuido en algunos lugares."", ""emisor"": null, ""fecha"": null, ""monto"": null, ""citas_clave"": [""Aurora, una residente de la selva central, explica que desde su infancia ha sido inculcada en el amor por su país y la celebración del 28 de julio como día de la independencia."", ""Aurora menciona que la celebración de la independencia incluía festividades, compras de ropa y juguetes."", ""Aurora también menciona que la celebración de la independencia ha disminuido en algunos lugares.""], ""numero_hablantes"": 2}";no;"citas_clave no son frases textuales (repiten el resumen); ""residente de la selva central"" no aparece en el texto"
+clip_009;audio;información nutricional pizza;Tres opciones de transporte: autobús, metro, taxi. Problema con la llanta. Recomendar una dieta sin solo verduras. El llano en llamas de Juan Ruflo. Hamster comen zanahorias. ¿Qué periódico más se lee en la zona? Incitar a sacar provecho del día presente. ¿Te gustan los chocolates? Quiero comer pavo, pero nadie más quiere. Tipo de pantalla de alta tecnología, alta resolución.;;;;;;Quiero saber la información nutricional que tiene una rebanada de pizza. Tenemos tres opciones de transporte, puedes ir en autobús, en metro, o en taxi. Tengo un problemón, se me acaba de reventar una llanta. Les envío las reservaciones a sus correos. Quiero que me recomiendes una dieta, pero donde uno pueda comer algo, no puras verduras. El llano en llamas es un clásico de Juan Ruflo. Los hamster;"{""modalidad"": ""audio"", ""tema"": ""información nutricional pizza"", ""resumen"": ""Tres opciones de transporte: autobús, metro, taxi. Problema con la llanta. Recomendar una dieta sin solo verduras. El llano en llamas de Juan Ruflo. Hamster comen zanahorias. ¿Qué periódico más se lee en la zona? Incitar a sacar provecho del día presente. ¿Te gustan los chocolates? Quiero comer pavo, pero nadie más quiere. Tipo de pantalla de alta tecnología, alta resolución."", ""emisor"": null, ""fecha"": null, ""monto"": null, ""citas_clave"": null, ""numero_hablantes"": null}";si;
+clip_011;audio;invitación a sembrar albahaca;La conversación abarca temas variados como la goma de mascar, restaurantes vietnamitas en América del Norte, y la posibilidad de sembrar albahaca. También menciona la invasión gringa en México y la posibilidad de tener una pantalla transparente.;;;;;1.0;Hasta que no acabes la tarea no puedes salir con tus amigos El chicle se conoció en México durante la invasión gringa de finales del siglo diecinueve ¿Me ayudas a sembrar albahaca? La goma de mascar proviene del interior de unos árboles de los que no me sé el nombre ¿Sabes hacer anguila ahumada? Los restaurantes vietnamitas se han puesto de moda en América del Norte Necesito un martillo y varios c;"{""modalidad"": ""audio"", ""tema"": ""invitación a sembrar albahaca"", ""resumen"": ""La conversación abarca temas variados como la goma de mascar, restaurantes vietnamitas en América del Norte, y la posibilidad de sembrar albahaca. También menciona la invasión gringa en México y la posibilidad de tener una pantalla transparente."", ""emisor"": null, ""fecha"": null, ""monto"": null, ""citas_clave"": null, ""numero_hablantes"": 1}";si;
+clip_018;audio;comida y compras;El hablante mencionó que comer sopa de tortuga está prohibido debido a su situación de extinción. Habló sobre un postre de plátanos a la crema de café. Expresó su cansancio. Pidió verificar si hay un video bueno. Indicó que mañana helaría en la madrugada. Consultó si hay teatros cerca. Comentó que la pronunciación del francés es difícil. Propuso moverse por la zona del centro caminando. Solicitó comprar ocho cajas de papel higiénico y treinta toallas no desechables. También preguntó si hay tiendas departamentales cerca de casa de sus padres.;;;;;1.0;Comer sopa de tortuga está prohibido porque está en peligro de extinción. De postre voy a servir plátanos a la crema de café. Está muy cansado. ¿Quién subió el mejor video? Mañana va a helar en la madrugada. ¿Puedes verificar si hay algún teatro cerca? La pronunciación del francés es difícil. En la zona del centro te puedes mover fácilmente caminando y no vas a necesitar usar ningún medio de trans;"{""modalidad"": ""audio"", ""tema"": ""comida y compras"", ""resumen"": ""El hablante mencionó que comer sopa de tortuga está prohibido debido a su situación de extinción. Habló sobre un postre de plátanos a la crema de café. Expresó su cansancio. Pidió verificar si hay un video bueno. Indicó que mañana helaría en la madrugada. Consultó si hay teatros cerca. Comentó que la pronunciación del francés es difícil. Propuso moverse por la zona del centro caminando. Solicitó comprar ocho cajas de papel higiénico y treinta toallas no desechables. También preguntó si hay tiendas departamentales cerca de casa de sus padres."", ""emisor"": null, ""fecha"": null, ""monto"": null, ""citas_clave"": null, ""numero_hablantes"": 1}";no;"""¿quién subió el mejor video?"" lo resume como ""pidió verificar si hay un video bueno"""
