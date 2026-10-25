@@ -1,0 +1,6 @@
+modalidad,modelo,métrica,error_%,latencia
+documento,PaddleOCR (base),CER,13.9,39.8 s/doc
+documento,Tesseract (spa),CER,48.5,1.9 s/doc
+audio,Qwen3-ASR 0.6B,WER,8.0,RTF 1.0
+audio,faster-whisper large-v3-turbo,WER,6.1,RTF 0.59
+audio,faster-whisper small (base),WER,9.5,RTF 0.55
