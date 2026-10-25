@@ -151,7 +151,18 @@ PORLAJUNTA
 Y DE VIJILANCIA DE
 ADMINISTRADORA
 LAEMISION FISCAL
-LIMA JUNIO 30 DE 1879.","PaddleOCR 3.7.0 (lang=es, config. base, CPU sin oneDNN)",,"Billete de 20 soles, República del Perú, 1879",0.943,si
+LIMA JUNIO 30 DE 1879.","PaddleOCR 3.7.0 (lang=es, config. base, CPU sin oneDNN)","XX                           20
+LA REPÚBLICA DEL PERÚ
+PAGARÁ AL PORTADOR
+Veinte Soles                 Veinte Soles
+
+B322426                      B322426
+Conforme a lo                dispuesto en las 
+leyes de 27 de enero          y 4 de febrero de 1879
+POR LA JUNTA                 ADMINISTRADORA
+Y DE VIGILANCIA DE           LA EMISION FISCAL
+
+LIMA, JUNIO 30 DE 1879.","Billete de 20 soles, República del Perú, 1879",0.943,si
 doc_003,datos/raw/documentos/doc_003.jpg,impreso,Sociedad Académica de Amantes del País · Dominio público,"Eol. 25
 0
 Num.. 4
@@ -786,7 +797,30 @@ ma debida, ni se fomentará el espíritu de ta-
 cha, ni quedará á arbitrio de cualquier ajen-
 te la clasificacion de los derechos políticos. (*)
 (*) Hasta aquí se leyó este discurso en la se-
-sion pūblica del dia 15 de abril.","PaddleOCR 3.7.0 (lang=es, config. base, CPU sin oneDNN)",,"Constitución Política de la República Peruana 1823, discurso preliminar, pág. XXII",0.995,si
+sion pūblica del dia 15 de abril.","PaddleOCR 3.7.0 (lang=es, config. base, CPU sin oneDNN)","XXII
+de justicia y conveniencia pública, Por eso
+la falta de libertad, el concepto de crimen,
+y los vicios que corrompen la moral, sin cu-
+yo influjo no puede haber república, igualmen-
+te que la negociacion de sufrajios para ad-
+quirir á buelta de manejos el derecho de la
+urna nacional, suspenden en unos el uso de
+la ciudadania ; haciendola perder enteramen-
+te en otros la naturalizacion en pais estran-
+jero, y la imposicion de penas que suponen
+grandes delitos. Y habiendo enseñado la es-
+periencia que al tiempo de las elecciones sue-
+len hacerse acusaciones, nacidas comunmen-
+te de ruines venganzas, seria muy acertado se
+saque del censo constitucional, que debe ha-
+cerse cada quinquenio, un Registro civico.
+Anotadas en él estas irregularidades en la for-
+ma debida, ni se fomentará el espíritu de ta-
+cha, ni quedará á arbitrio de cualquier ajen-
+te la clasificacion de los derechos políticos. (*)
+
+(*) Hasta aquí se leyó este discurso en la se-
+sion pública del dia 15 de abril.","Constitución Política de la República Peruana 1823, discurso preliminar, pág. XXII",0.995,si
 doc_008,datos/raw/documentos/doc_008.jpg,impreso,Congreso Constituyente del Perú · Dominio público,"LA
 MESK PERUANA
 EL LIBRO DE LAS FAMILIAS,
@@ -801,7 +835,21 @@ giénicas, composiciones para el tocador de las
 niñas, leccioncs de lavado y planchedo.
 AREQUIPA.
 IMPENTA DE FRANCBO IBAÑ.
-1867.","PaddleOCR 3.7.0 (lang=es, config. base, CPU sin oneDNN)",,"La Mesa Peruana (Arequipa, 1867)",0.94,si
+1867.","PaddleOCR 3.7.0 (lang=es, config. base, CPU sin oneDNN)","LA MESA PERUANA
+O SEA
+EL LIBRO DE LAS FAMILIAS
+PRECEDIDO
+Del arte de trinchar y de las reglas que deben observarse
+durante la comida.
+CONTIENE
+El arte de cocina, arreglado á las costumbres y
+usos nacionales, el tratado de Repostería, com-
+puesto de las mejores recetas, precauciones hi-
+giénicas, composiciones para el tocador de las,
+niñas, lecciones de lavado y planchado.
+AREQUIPA.
+IMPRENTA DE FRANCISCO IBAÑEZ
+1867","La Mesa Peruana (Arequipa, 1867)",0.94,si
 doc_009,datos/raw/documentos/doc_009.jpeg,foto,Fotografía propia · propia (CC BY 4.0),"Centro Neurológico
 Santiago Ramón y Cajal
 EXPERTOS EN NEUROLOGÍA
@@ -1254,7 +1302,24 @@ ANDAMIOS DE FIERRO
 LLAVEROS Y OTROS ARTÍCULOS
 2 MÁQUINAS DE COSER
 BISUTERÍA (ACERO BAÑADO EN ORO)
-VITRINAS DE DIFERENTES TAMAÑOS","PaddleOCR 3.7.0 (lang=es, config. base, CPU sin oneDNN)",,Cartel de remate de artículos (contiene datos de un particular),0.986,si
+VITRINAS DE DIFERENTES TAMAÑOS","PaddleOCR 3.7.0 (lang=es, config. base, CPU sin oneDNN)","[TELEFONO]-[TELEFONO] [PERSONA_1]
+REMATE DE ARTÍCULOS 
+NUEVOS Y USADOS
+POR CIERRE DE LOCAL
+AL 30% DE SU PRECIO.
+MOLDES DE YESO P/VELAS
+REBAJA AL 30% Y 40% EN OTROS ARTÍCULOS
+ADORNOS CHINOS.
+CANDELABROS P/ VELAS
+ADORNOS DE NAVIDAD
+MÁQUINAS REGISTRADORAS
+MÁQUINAS ETIQUETADORAS
+MÁQUINA ENCAPSULADORA
+ANDAMIOS DE FIERRO
+LLAVEROS Y OTROS ARTÍCULOS
+2 MÁQUINAS DE COSER
+BISUTERÍA (ACERO BAÑADO EN ORO)
+VITRINAS DE DIFERENTES TAMAÑOS",Cartel de remate de artículos (contiene datos de un particular),0.986,si
 doc_015,datos/raw/documentos/doc_015.jpeg,foto,Fotografía propia · propia (CC BY 4.0),"MUNICIPALIDAD
 DEJESUSMARIA
 PERENNIZANDOLA
@@ -1271,7 +1336,24 @@ REMODELA EL PARQUE Y COLOCA LA
 SIENDOALCALDE EL
 SR.VICTOROYANGOREN AGUERO
 YREOIDORES
-MAY9-100","PaddleOCR 3.7.0 (lang=es, config. base, CPU sin oneDNN)",,"Placa conmemorativa de parque, Jesús María (relieve y brillo)",0.95,si
+MAY9-100","PaddleOCR 3.7.0 (lang=es, config. base, CPU sin oneDNN)","MUNICIPALIDAD
+DE JESUS MARIA
+PERENNIZANDO LA
+VISITA DE S.S.INAGURO EL
+""PARQUE JUAN PABLO II""
+SIENDO ALCALDE EL
+ING. MIGUEL FORT MAGOT
+Y REGIDORES:
+            FEBRERO – 1988
+ 
+EL ACTUAL CONCEJO MUNICIPAL EN 
+RECUERDO DE SU SEGUNDA VISITA 
+REMODELA EL PARQUE Y COLOCA LA
+""GRAN CRUZ ORNAMENTAL""
+SIENDO ALCALDE EL
+SR. VICTOR OYANGUREN AGÜERO
+Y REGIDORES:
+            MAYO – 1990","Placa conmemorativa de parque, Jesús María (relieve y brillo)",0.95,si
 doc_016,datos/raw/documentos/doc_016.jpeg,foto,Fotografía propia · propia (CC BY 4.0),"Ponte en
 Tiempo de
 El
@@ -1285,7 +1367,16 @@ Gobierno del Perú
 Jesús María
 PERÚ
 de la Mujer y
-Poblaciones Vulnerables","PaddleOCR 3.7.0 (lang=es, config. base, CPU sin oneDNN)",,"Cartel municipal #ModoNiñez (sombra de hojas, letra cursiva)",0.986,si
+Poblaciones Vulnerables","PaddleOCR 3.7.0 (lang=es, config. base, CPU sin oneDNN)","El                                     Ponte en
+tiempo de                              # Modo
+hoy no regresa                         Niñez
+ríe, juega y comparte
+
+
+
+Gobierno del Perú   Municipalidad de   Perú Ministerio
+                    Jesús María             de la Mujer y
+                                            Poblaciones Vulnerables","Cartel municipal #ModoNiñez (sombra de hojas, letra cursiva)",0.986,si
 doc_017,datos/raw/documentos/doc_017.jpeg,manuscrito,Fotografía propia · propia (CC BY 4.0),"LOCES SE
 EMERGENCIA
 Aquí aceptamos
@@ -1395,7 +1486,26 @@ A LA JARDINERA.
 en
 ESCABECHE DE TOFU.
 TALLARIN SALTADO CON CARNE.
-MILANESA CON ARRO2 Y ENSALADA.O","PaddleOCR 3.7.0 (lang=es, config. base, CPU sin oneDNN)",,"Pizarra blanca de menú, restaurante vegetariano (plumones)",0.957,si
+MILANESA CON ARRO2 Y ENSALADA.O","PaddleOCR 3.7.0 (lang=es, config. base, CPU sin oneDNN)","Restaurante Vegetariano
+MENÚ ESPECIAL                    S/ 16.00
+HUEVO A LA RUSA.                 S/ 17.00 P.llevar
++
+CHUPE DE ZAPALLITO. I. .
++
+SEGUNDO: GUISO DE QUINUA C/ BISTECK.
+
+MENÚ EJECUTIVO                   S/ 20.00
+ENTRADA:                         S/21.00 P.llevar
+CAUSA RELLENA. o
+ENSALADA MIXTA o FRUTA. o        Solo
+SOLTERITO DE CHOCLO. o            pago  
+CHUPE DE ZAPALLITO ITALIANO        en EFECTIVO
+
+SEGUNDO:
+CHAUFA A LA JARDINERA.
+ESCABECHE DE TOFU. o
+TALLARIN SALTADO CON CARNE
+MILANESA CON ARROZ Y ENSALADA. o","Pizarra blanca de menú, restaurante vegetariano (plumones)",0.957,si
 doc_021,datos/raw/documentos/doc_021.jpeg,manuscrito,Fotografía propia · propia (CC BY 4.0),"ESPECTALIDADE
 CARNE
 FILET MIGNON
@@ -1452,7 +1562,18 @@ Huero,Chorizg, PaHatCafe tJugo
 *HUACHANO
 Salchicha, huevo tCafe tJugo.
 *LIGERO.
-Ens FrutattostadastCafe","PaddleOCR 3.7.0 (lang=es, config. base, CPU sin oneDNN)",,Pizarra de desayunos (tiza),0.961,si
+Ens FrutattostadastCafe","PaddleOCR 3.7.0 (lang=es, config. base, CPU sin oneDNN)","DESAYUNOS
+
+PERUANO
+Pan con Chicharron+Café+Jugo
+LOMO SALTADO
+Trozo de lomo fino+Café+Jugo
+GRANJERO
+Huevo, chorizo, palta+Café+Jugo
+HUACHANO
+Salchicha,huevo+Café+Jugo
+LIGERO
+Ens fruta+tostadas+Café",Pizarra de desayunos (tiza),0.961,si
 doc_023,datos/raw/documentos/doc_023.jpeg,manuscrito,Fotografía propia · propia (CC BY 4.0),"Jesús María
 Municipalidad de
 Municipalidad de
@@ -1490,7 +1611,17 @@ analyy
 + Awaltitor los deatos peror Identiticor
 pairones 4 tendenicas.
 + Conemicos bs hallazag en tablong
-o dashboards","PaddleOCR 3.7.0 (lang=es, config. base, CPU sin oneDNN)",,"Apuntes sobre el rol de data analyst (lapicero, hoja cuadriculada)",0.865,si
+o dashboards","PaddleOCR 3.7.0 (lang=es, config. base, CPU sin oneDNN)","DATA ANALYST
++EXTRAE DATOS RECOLECTADOS
++ANALIZARLOS Y REPORTAR RESULTADOS
+DIA A DIA DE DATA ANALYST
++Identificar necesidades de información
++Extrae datos de fuentes con SQL o Python
++Limpiar y organizar los datos para su analisis
++Analizar los datos para identificar patrones y tendencias
++Limpiar y organizar los datos para su analisis
++Analizar los datos para identificar patrones y tendencias
++Comunicar los hallazgos en tableros o dashboard","Apuntes sobre el rol de data analyst (lapicero, hoja cuadriculada)",0.865,si
 doc_025,datos/raw/documentos/doc_025.jpeg,manuscrito,Fotografía propia · propia (CC BY 4.0),"Entrada
 - Sopa a la Minuta
 - Crema de roato
@@ -1500,4 +1631,13 @@ Segends
 Sew de res a l a nortena con arrry Rre
 - Parrilla de Pollo cen arrory Frased
 - Filete de Pollo con aroz, Papay ensal.
-8 11.00","PaddleOCR 3.7.0 (lang=es, config. base, CPU sin oneDNN)",,Menú escrito con lapicero en papel (texto cortado al borde),0.929,si
+8 11.00","PaddleOCR 3.7.0 (lang=es, config. base, CPU sin oneDNN)","Entrada
+Sopa a la Minuta
+Crema de rocoto
+Ensalada fresca
+Segundo
+Seco de pollo con arroz y frejol
+Seco de res a la norteña con arroz y fre
+Parrilla de pollo con arroz y frejol
+Filete de pollo con arroz, papa y ensal
+S/ 11.00",Menú escrito con lapicero en papel (texto cortado al borde),0.929,si
