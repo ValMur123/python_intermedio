@@ -1,0 +1,50 @@
+id,modalidad,fuente_url,licencia,acceso,autor,titulo
+doc_001,documento,https://commons.wikimedia.org/wiki/File:Inundaci%C3%B3n_Carhuaz_1844.png,Dominio público,Descarga pública desde fuente_url,El Peruano (periódico oficial),"El Peruano, Lima, 10 de abril de 1844"
+doc_002,documento,https://commons.wikimedia.org/wiki/File:Inundaci%C3%B3n_Carhuaz_1844.png,Dominio público,Descarga pública desde fuente_url,República del Perú / American Bank Note Co.,"Billete de 20 soles, República del Perú, 1879"
+doc_003,documento,https://commons.wikimedia.org/wiki/File:Pisco-punch-mercurio-peruano-1791.jpg,Dominio público,Descarga pública desde fuente_url,Sociedad Académica de Amantes del País,"Mercurio Peruano, Lima, 13 de enero de 1791 (recortado)"
+doc_004,documento,https://commons.wikimedia.org/wiki/File:El_Comercio_1945.jpg,Dominio público,Descarga pública desde fuente_url,Imprenta de Francisco Ibáñez,El Comercio 1945 (Hitler)
+doc_005,documento,https://commons.wikimedia.org/wiki/File:El_Comercio_Issue_1.jpg,Dominio público,Descarga pública desde fuente_url,El Comercio,"El Comercio, Lima, 4 de mayo de 1839 (primer número)"
+doc_006,documento,https://commons.wikimedia.org/wiki/File:El_Comercio_-_Lima._Per%C3%BA_y_Ecuador._3-3-1842.jpg,Dominio público,Descarga pública desde fuente_url,El Comercio,"El Comercio, Lima, c. 1842, ""Perú y Ecuador"" (pág. 826)"
+doc_007,documento,https://repositorio.pucp.edu.pe/items/37e480e8-90aa-47d5-8d5a-f861499e26a6/full,CC0 1.0,Repositorio PUCP (descarga pública),Congreso Constituyente del Perú,"Constitución Política de la República Peruana 1823, discurso preliminar, pág. XXII"
+doc_008,documento,https://commons.wikimedia.org/wiki/File:La_mesa_peruana_o_sea_el_libro_de_las_familias.jpg,Dominio público,Descarga pública desde fuente_url,Congreso Constituyente del Perú,"La Mesa Peruana (Arequipa, 1867)"
+doc_009,documento,,propia (CC BY 4.0),Captura propia,Fotografía propia,"Banner de centro médico, Jesús María (inclinado, baja resolución)"
+doc_010,documento,,propia (CC BY 4.0),Captura propia,Fotografía propia,"Menú de chifa, Jesús María (perspectiva)"
+doc_011,documento,,propia (CC BY 4.0),Captura propia,Fotografía propia,"Carta de cevichería sobre la mesa (inclinación fuerte, desenfoque)"
+doc_012,documento,,propia (CC BY 4.0),Captura propia,Fotografía propia,Afiche de centro de terapias (contiene personas)
+doc_013,documento,,propia (CC BY 4.0),Captura propia,Fotografía propia,"Menú de sanguchería, de noche (letra pequeña)"
+doc_014,documento,,propia (CC BY 4.0),Captura propia,Fotografía propia,Cartel de remate de artículos (contiene datos de un particular)
+doc_015,documento,,propia (CC BY 4.0),Captura propia,Fotografía propia,"Placa conmemorativa de parque, Jesús María (relieve y brillo)"
+doc_016,documento,,propia (CC BY 4.0),Captura propia,Fotografía propia,"Cartel municipal #ModoNiñez (sombra de hojas, letra cursiva)"
+doc_017,documento,,propia (CC BY 4.0),Captura propia,Fotografía propia,"Pizarra de menú, restaurante criollo (tiza)"
+doc_018,documento,,propia (CC BY 4.0),Captura propia,Fotografía propia,"Apuntes de vectores en R3 (lapicero, recortado sin nombre)"
+doc_019,documento,,propia (CC BY 4.0),Captura propia,Fotografía propia,Pizarra de menú del día detrás de vidrio con reflejos (tiza)
+doc_020,documento,,propia (CC BY 4.0),Captura propia,Fotografía propia,"Pizarra blanca de menú, restaurante vegetariano (plumones)"
+doc_021,documento,,propia (CC BY 4.0),Captura propia,Fotografía propia,Pizarra de especialidades (tiza de colores)
+doc_022,documento,,propia (CC BY 4.0),Captura propia,Fotografía propia,Pizarra de desayunos (tiza)
+doc_023,documento,,propia (CC BY 4.0),Captura propia,Fotografía propia,"Pizarra de menú con líneas borradas (tiza, tras plástico)"
+doc_024,documento,,propia (CC BY 4.0),Captura propia,Fotografía propia,"Apuntes sobre el rol de data analyst (lapicero, hoja cuadriculada)"
+doc_025,documento,,propia (CC BY 4.0),Captura propia,Fotografía propia,Menú escrito con lapicero en papel (texto cortado al borde)
+clip_001,audio,https://commons.wikimedia.org/wiki/File:Entrevista_1_en_la_Av._Rivag%C3%BCero_-_El_Agustino.ogg,CC BY-SA 4.0,Descarga pública desde fuente_url; clip recortado en este notebook,JorgeFlores-pe (Wikimedia Perú),agustino_1.ogg
+clip_002,audio,https://commons.wikimedia.org/wiki/File:Entrevista_1_en_la_Av._Rivag%C3%BCero_-_El_Agustino.ogg,CC BY-SA 4.0,Descarga pública desde fuente_url; clip recortado en este notebook,JorgeFlores-pe (Wikimedia Perú),agustino_1.ogg
+clip_003,audio,https://commons.wikimedia.org/wiki/File:Entrevista_2_en_la_Av._Rivag%C3%BCero_-_El_Agustino.ogg,CC BY-SA 4.0,Descarga pública desde fuente_url; clip recortado en este notebook,JorgeFlores-pe (Wikimedia Perú),agustino_2.ogg
+clip_004,audio,https://commons.wikimedia.org/wiki/File:Entrevista_2_en_la_Av._Rivag%C3%BCero_-_El_Agustino.ogg,CC BY-SA 4.0,Descarga pública desde fuente_url; clip recortado en este notebook,JorgeFlores-pe (Wikimedia Perú),agustino_2.ogg
+clip_005,audio,https://commons.wikimedia.org/wiki/File:Entrevista-Aurora_Coronado-organizaci%C3%B3n_de_mujeres_ind%C3%ADgenas-fiestas_patrias.ogg,CC BY-SA 4.0,Descarga pública desde fuente_url; clip recortado en este notebook,QM Keen,aurora_coronado.ogg
+clip_006,audio,https://commons.wikimedia.org/wiki/File:Entrevista-Aurora_Coronado-organizaci%C3%B3n_de_mujeres_ind%C3%ADgenas-fiestas_patrias.ogg,CC BY-SA 4.0,Descarga pública desde fuente_url; clip recortado en este notebook,QM Keen,aurora_coronado.ogg
+clip_007,audio,https://commons.wikimedia.org/wiki/File:Entrevista-Aurora_Coronado-organizaci%C3%B3n_de_mujeres_ind%C3%ADgenas-fiestas_patrias.ogg,CC BY-SA 4.0,Descarga pública desde fuente_url; clip recortado en este notebook,QM Keen,aurora_coronado.ogg
+clip_008,audio,https://www.openslr.org/73/,CC BY-SA 4.0,Descarga pública: es_pe_female.zip / es_pe_male.zip; clip armado en este notebook,Google (OpenSLR 73),diálogo pef_06136 + pem_02436
+clip_009,audio,https://www.openslr.org/73/,CC BY-SA 4.0,Descarga pública: es_pe_female.zip / es_pe_male.zip; clip armado en este notebook,Google (OpenSLR 73),hablante pef_02121
+clip_010,audio,https://www.openslr.org/73/,CC BY-SA 4.0,Descarga pública: es_pe_female.zip / es_pe_male.zip; clip armado en este notebook,Google (OpenSLR 73),hablante pem_00295
+clip_011,audio,https://www.openslr.org/73/,CC BY-SA 4.0,Descarga pública: es_pe_female.zip / es_pe_male.zip; clip armado en este notebook,Google (OpenSLR 73),hablante pef_08421
+clip_012,audio,https://www.openslr.org/73/,CC BY-SA 4.0,Descarga pública: es_pe_female.zip / es_pe_male.zip; clip armado en este notebook,Google (OpenSLR 73),hablante pem_09697
+clip_013,audio,https://www.openslr.org/73/,CC BY-SA 4.0,Descarga pública: es_pe_female.zip / es_pe_male.zip; clip armado en este notebook,Google (OpenSLR 73),hablante pef_03034
+clip_014,audio,https://www.openslr.org/73/,CC BY-SA 4.0,Descarga pública: es_pe_female.zip / es_pe_male.zip; clip armado en este notebook,Google (OpenSLR 73),hablante pem_03397
+clip_015,audio,https://www.openslr.org/73/,CC BY-SA 4.0,Descarga pública: es_pe_female.zip / es_pe_male.zip; clip armado en este notebook,Google (OpenSLR 73),hablante pef_03397
+clip_016,audio,https://www.openslr.org/73/,CC BY-SA 4.0,Descarga pública: es_pe_female.zip / es_pe_male.zip; clip armado en este notebook,Google (OpenSLR 73),hablante pem_02121
+clip_017,audio,https://www.openslr.org/73/,CC BY-SA 4.0,Descarga pública: es_pe_female.zip / es_pe_male.zip; clip armado en este notebook,Google (OpenSLR 73),hablante pef_01208
+clip_018,audio,https://www.openslr.org/73/,CC BY-SA 4.0,Descarga pública: es_pe_female.zip / es_pe_male.zip; clip armado en este notebook,Google (OpenSLR 73),hablante pem_08784
+clip_019,audio,https://www.openslr.org/73/,CC BY-SA 4.0,Descarga pública: es_pe_female.zip / es_pe_male.zip; clip armado en este notebook,Google (OpenSLR 73),hablante pef_05223
+clip_020,audio,https://www.openslr.org/73/,CC BY-SA 4.0,Descarga pública: es_pe_female.zip / es_pe_male.zip; clip armado en este notebook,Google (OpenSLR 73),hablante pem_02484
+clip_021,audio,https://www.openslr.org/73/,CC BY-SA 4.0,Descarga pública: es_pe_female.zip / es_pe_male.zip; clip armado en este notebook,Google (OpenSLR 73),hablante pef_00610
+clip_022,audio,https://www.openslr.org/73/,CC BY-SA 4.0,Descarga pública: es_pe_female.zip / es_pe_male.zip; clip armado en este notebook,Google (OpenSLR 73),hablante pem_04310
+clip_023,audio,https://www.openslr.org/73/,CC BY-SA 4.0,Descarga pública: es_pe_female.zip / es_pe_male.zip; clip armado en este notebook,Google (OpenSLR 73),hablante pef_03349
+clip_024,audio,https://www.openslr.org/73/,CC BY-SA 4.0,Descarga pública: es_pe_female.zip / es_pe_male.zip; clip armado en este notebook,Google (OpenSLR 73),hablante pem_07508
