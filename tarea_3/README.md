@@ -16,3 +16,21 @@ económica, medida con luces nocturnas satelitales, que los distritos sin miner�
 - Geográfica: todos los distritos del Perú (unidad de análisis: distrito).
 - Temporal: año 2021 (luces nocturnas VIIRS). Para validar la luz como proxy, se compara
   con el PBI departamental del INEI del mismo año.
+
+  ## 2. Datos y fuentes
+
+| Dato | Fuente | Cobertura | Cómo se obtiene |
+|---|---|---|---|
+| Luces nocturnas (radiancia) | NASA/NOAA VIIRS, compuesto anual | Perú, 2021, ~1 km por píxel | Dataset del curso en Hugging Face (`aquiro1994/ds-python-up`) |
+| Áreas mineras (km² intervenidos) | Maus et al. (2022), *Scientific Data* | Mundial, ~1 km por píxel | Dataset del curso |
+| Precipitación | Dataset del curso (laboratorio 7) | Perú | Dataset del curso |
+| Límites distritales | Shapefile del curso (sesión 07-raster) | Perú, todos los distritos | Dataset del curso |
+| PBI por departamentos (millones de S/ de 2007) | INEI, publicado por el BCRP (series RD17000DA–RD17023DA) | 24 departamentos, 2007-2023 | API del BCRP |
+
+**Fecha de descarga:** 29/10/2026.
+
+Todos los datos se descargan con `python scripts/obtener_datos.py`. Los rasters no se
+suben al repositorio por su tamaño; quedan en el caché local de Hugging Face. El PBI se
+guarda en `datos/originales/pbi_departamental_bcrp.csv`.
+
+datos/originales/rutas_rasters.json
