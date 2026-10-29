@@ -1,0 +1,11 @@
+pandas>=2.2,<3 #pandas y numpy manejan las tablas y los número
+numpy>=1.26
+geopandas>=1.0 #geopandas, shapely, pyproj y pyogrio trabajan con los mapas de distritos.
+pyogrio>=0.9
+shapely>=2.0
+pyproj>=3.6
+rasterio>=1.3 #rasterio y rasterstats leen las imágenes satelitales y sacan un valor por distrito.
+rasterstats>=0.21
+statsmodels>=0.14 #statsmodels hace las regresiones.
+huggingface-hub>=0.24 #huggingface-hub y requests descargan los datos del curso y del BCR
+requests>=2.32
