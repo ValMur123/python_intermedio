@@ -3,3 +3,8 @@ __pycache__/
 *.tif
 
 datos/originales/rutas_rasters.json
+
+reel/.venv-reel/
+reel/fuentes/
+reel/recursos/mi_voz*
+reel/recursos/musica.mp3

@@ -1,0 +1,54 @@
+{
+  "titulo": "La luz de las minas",
+  "escenas": [
+    {
+      "frase": "En Apurímac, el distrito que más brilla de noche no es la capital. Es Challhuahuacho, donde opera la mina Las Bambas.",
+      "cifra": "1 de 84",
+      "etiqueta": "Challhuahuacho: el distrito con más luz de Apurímac",
+      "imagen": "recursos/img_ficha_challhuahuacho.png",
+      "wer": 0.047619047619047616
+    },
+    {
+      "frase": "En el Perú no existe PBI por distrito. Por eso medimos la luz que captan los satélites de noche en los mil ochocientos setenta y tres distritos del país.",
+      "cifra": "1 873",
+      "etiqueta": "distritos medidos desde el espacio (VIIRS 2021)",
+      "imagen": "recursos/img_mapa_peru.png",
+      "wer": 0.0
+    },
+    {
+      "frase": "Ciento veintinueve tienen minería. Comparados con distritos parecidos en tamaño, lluvia y región, emiten tres coma seis veces más luz.",
+      "cifra": "3,6×",
+      "etiqueta": "más luz en distritos con minería",
+      "imagen": "recursos/chart_medianas.png",
+      "wer": 0.05
+    },
+    {
+      "frase": "Y cuanto más grande la mina, mayor la brecha: donde la minería supera los diez kilómetros cuadrados, la luz es casi veintitrés veces mayor.",
+      "cifra": "22,6×",
+      "etiqueta": "más luz donde la minería supera 10 km²",
+      "imagen": "recursos/chart_robustez.png",
+      "wer": 0.0
+    },
+    {
+      "frase": "Pero esa luz se concentra en un punto. Por kilómetro cuadrado, los distritos mineros brillan menos: son grandes y casi vacíos.",
+      "cifra": "0,32 vs 1,54",
+      "etiqueta": "luz por km²: mineros vs. no mineros",
+      "imagen": "recursos/chart_km2.png",
+      "wer": 0.0
+    },
+    {
+      "frase": "Y la luz satelital sigue de cerca al PBI oficial: por departamento, la correlación es de cero coma noventa y tres.",
+      "cifra": "r = 0,93",
+      "etiqueta": "luz satelital vs. PBI del INEI",
+      "imagen": "recursos/img_card_pbi.png",
+      "wer": 0.047619047619047616
+    },
+    {
+      "frase": "Más luz no siempre significa más bienestar. Explora el mapa distrito por distrito: el enlace está en la publicación.",
+      "cifra": "",
+      "etiqueta": "Explora el dashboard: valmur123.github.io/python_intermedio/tarea_3/web",
+      "imagen": "recursos/img_titulo.png",
+      "wer": 0.0
+    }
+  ]
+}
