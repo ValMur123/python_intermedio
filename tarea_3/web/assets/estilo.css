@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>La luz de las minas · Perú 2021</title>
+<meta name="description" content="¿Los distritos mineros del Perú tienen más actividad económica? Un análisis con luces nocturnas satelitales (VIIRS 2021) y áreas mineras.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/estilo.css">
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <p class="kicker">Tarea 3 · Python Intermedio · Diplomado PUCP 2026</p>
+    <h1>La luz de las minas</h1>
+    <p class="pregunta">¿Los distritos mineros del Perú tienen más actividad económica que el resto? Lo medimos desde el espacio, con la luz que emite cada distrito de noche.</p>
+    <p class="contexto">En el Perú no existe PBI por distrito: el INEI lo publica solo por departamento. La literatura usa la <strong>luminosidad nocturna satelital</strong> como aproximación de la actividad económica (Henderson, Storeygard y Weil, 2012; para el Perú, Seminario y Palomino, 2022). Aquí cruzamos esa luz con la superficie minera detectada por satélite en cada uno de los distritos del país.</p>
+    <ul class="chips">
+      <li><b>Cobertura</b> Perú · <span data-k="n_distritos">—</span> distritos</li>
+      <li><b>Año</b> <span data-k="anio">2021</span></li>
+      <li><b>Fuentes</b> NASA/NOAA VIIRS · Maus et al. (2022) · INEI–BCRP</li>
+    </ul>
+  </div>
+</header>
+
+<nav class="controles" aria-label="Filtros del dashboard">
+  <div class="wrap controles-in">
+    <label>Departamento
+      <select id="f-dep"><option value="">Todo el Perú</option></select>
+    </label>
+    <label>Grupo de distritos
+      <select id="f-grupo">
+        <option value="todos">Todos</option>
+        <option value="con">Con minería</option>
+        <option value="sin">Sin minería</option>
+        <option value="Grande (≥10 km²)">Minería grande (≥10 km²)</option>
+        <option value="Media (1-10 km²)">Minería media (1-10 km²)</option>
+        <option value="Pequeña (<1 km²)">Minería pequeña (&lt;1 km²)</option>
+      </select>
+    </label>
+    <label>Indicador
+      <select id="f-ind">
+        <option value="luz_total">Luz total del distrito</option>
+        <option value="luz_media">Luz por km² (intensidad)</option>
+        <option value="mina_km2">Área minera (km²)</option>
+      </select>
+    </label>
+    <label class="buscar">Buscar distrito
+      <input id="f-buscar" list="lista-distritos" placeholder="Ej.: Challhuahuacho" autocomplete="off">
+      <datalist id="lista-distritos"></datalist>
+    </label>
+    <div class="botones">
+      <button id="b-reset" type="button">Limpiar</button>
+      <button id="b-csv" type="button" class="sec">Descargar CSV</button>
+    </div>
+  </div>
+</nav>
+
+<main class="wrap">
+
+  <section class="kpis" aria-label="Indicadores clave">
+    <article class="kpi"><h3>Distritos en la selección</h3><p class="v" id="k1">—</p><p class="s" id="k1s"></p></article>
+    <article class="kpi acento"><h3>Luz total: mineros vs. no mineros</h3><p class="v" id="k2">—</p><p class="s" id="k2s"></p></article>
+    <article class="kpi"><h3>Superficie minera intervenida</h3><p class="v" id="k3">—</p><p class="s" id="k3s"></p></article>
+    <article class="kpi"><h3>Distrito más luminoso</h3><p class="v small" id="k4">—</p><p class="s" id="k4s"></p></article>
+  </section>
+
+  <section class="fila mapa-fila">
+    <figure class="panel mapa-panel">
+      <figcaption><h2 id="t-mapa">Mapa</h2><p id="st-mapa">Pasa el cursor o haz clic en un distrito.</p></figcaption>
+      <div id="mapa" class="mapa"></div>
+      <div id="leyenda" class="leyenda"></div>
+    </figure>
+    <div class="col-der">
+      <aside class="panel ficha" id="ficha">
+        <h2>Ficha del distrito</h2>
+        <p class="vacio">Selecciona un distrito en el mapa o búscalo arriba.</p>
+      </aside>
+      <figure class="panel">
+        <figcaption><h2 id="t-top">Top 12</h2><p>Según el indicador elegido, dentro de la selección.</p></figcaption>
+        <div id="g-top"></div>
+      </figure>
+    </div>
+  </section>
+
+  <section class="fila dos">
+    <figure class="panel">
+      <figcaption><h2>¿Cuánta luz según la intensidad minera?</h2><p>Cada punto es un distrito. Caja = 50 % central; línea = mediana. Escala logarítmica.</p></figcaption>
+      <div id="g-caja"></div>
+    </figure>
+    <figure class="panel">
+      <figcaption><h2>Luz vs. tamaño del distrito</h2><p>Los distritos mineros son más grandes: por eso comparamos controlando el área.</p></figcaption>
+      <div id="g-disp"></div>
+    </figure>
+  </section>
+
+  <section class="fila dos">
+    <figure class="panel">
+      <figcaption><h2>¿La luz sigue al PBI? Por departamento</h2><p>Luz total (satélite) vs. PBI <span data-k="anio">2021</span> del INEI, ambos en escala log. Lima incluye Callao.</p></figcaption>
+      <div id="g-pbi"></div>
+    </figure>
+    <figure class="panel">
+      <figcaption><h2>Peso de la luz minera en cada departamento</h2><p>% de la luz del departamento que proviene de distritos con minería.</p></figcaption>
+      <div id="g-pct"></div>
+    </figure>
+  </section>
+
+  <section class="hallazgos" aria-labelledby="h-hall">
+    <h2 id="h-hall">Tres hallazgos</h2>
+    <div class="cards" id="hallazgos"></div>
+  </section>
+
+  <section class="panel robustez">
+    <h2>¿El resultado depende de cómo definimos «minero»?</h2>
+    <p>Regresión del log de la luz total sobre ser minero, controlando log del área, precipitación y efectos fijos por departamento (errores robustos). Probamos cuatro umbrales de superficie minera.</p>
+    <div class="tabla-scroll"><table id="t-rob"></table></div>
+  </section>
+
+  <section class="metodo">
+    <div>
+      <h2>Metodología</h2>
+      <ol>
+        <li><b>Luz.</b> Compuesto anual VIIRS 2021 (~1 km por píxel). Con <i>zonal statistics</i> sumamos la radiancia dentro de cada distrito (<code>all_touched=True</code>, nodata declarado; negativos recortados a 0).</li>
+        <li><b>Minería.</b> Raster global de áreas mineras (Maus et al., 2022): km² de superficie intervenida por distrito. «Minero» = más de 0 km²; luego probamos 1, 5 y 10 km².</li>
+        <li><b>Área.</b> Calculada en un CRS métrico (EPSG:24891), no en grados.</li>
+        <li><b>Comparación.</b> Medianas por grupo y regresión con controles de área, lluvia y departamento.</li>
+        <li><b>Validación externa.</b> Sumamos la luz por departamento y la comparamos con el PBI real del INEI (API del BCRP).</li>
+      </ol>
+    </div>
+    <div>
+      <h2>Fuentes</h2>
+      <ul>
+        <li>Luces nocturnas: NASA/NOAA VIIRS, compuesto anual 2021 (vía dataset del curso, sesión 07-raster).</li>
+        <li>Áreas mineras: Maus, V. et al. (2022). <i>An update on global mining land use</i>. Scientific Data.</li>
+        <li>PBI por departamentos: INEI, series RD17000DA–RD17023DA del <a href="https://estadisticas.bcrp.gob.pe/estadisticas/series/annual/region-produccion" target="_blank" rel="noopener">BCRP</a>.</li>
+        <li>Límites distritales: shapefile del curso (sesión 07-raster).</li>
+        <li>Seminario, B. y Palomino, L. (2022). <i>Estimación del PIB a nivel subnacional utilizando datos satelitales de luminosidad: Perú, 1993-2018</i>. Universidad del Pacífico.</li>
+      </ul>
+      <h2>Limitaciones</h2>
+      <ul>
+        <li>La luz es una aproximación, no el PBI: las minas iluminan sus instalaciones aunque eso no se traduzca en ingresos para la población.</li>
+        <li>Es una <b>correlación</b>, no un efecto causal: las minas están donde hay mineral, y eso puede coincidir con vías o ciudades.</li>
+        <li>Un solo año (2021) y resolución de ~1 km: distritos urbanos pequeños quedan representados por pocos píxeles.</li>
+        <li>El raster minero detecta superficie intervenida, no producción ni tipo de mineral.</li>
+      </ul>
+    </div>
+  </section>
+</main>
+
+<footer class="pie">
+  <div class="wrap">
+    <p>Elaborado por Alessandra Murga · Diplomado PUCP 2026 · Datos y código en GitHub. Dashboard construido con Python (análisis) y D3.js (visualización), con apoyo de IA.</p>
+  </div>
+</footer>
+
+<div id="tooltip" class="tooltip" role="status" aria-live="polite"></div>
+<script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>
