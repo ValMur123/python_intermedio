@@ -47,3 +47,36 @@ guarda en `datos/originales/pbi_departamental_bcrp.csv`.
   cada departamento que proviene de distritos mineros.
 
 Resultado: 1 873 distritos, de los cuales 129 tienen actividad minera detectada.
+
+## 4. Análisis y hallazgos
+
+`scripts/analizar_datos.py` compara distritos con y sin minería (medianas y regresión
+del log de la luz total con controles de área, precipitación y departamento, con
+errores robustos) y valida la luz con el PBI departamental del INEI.
+
+1. **Los distritos mineros tienen más luz.** Luz total mediana: 29,1 (mineros) vs 4,1
+   (no mineros). Comparando distritos de igual tamaño, lluvia y departamento, los
+   mineros tienen 3,6 veces más luz (coef. = 1,29; t = 7,6; N = 1 873).
+2. **A mayor mina, mayor brecha; pero la luz se concentra en un punto.** Si se
+   exige más de 1, 5 o 10 km² de área minera, la diferencia sube a 7, 15 y 23 veces.
+   Por km², en cambio, los distritos mineros brillan menos (0,32 vs 1,54): son el doble
+   de grandes (377 vs 195 km² de mediana) y su luz se concentra en las operaciones.
+3. **La luz satelital sigue al PBI oficial.** La correlación entre luz y PBI por
+   departamento es 0,93 (0,88 sin Lima). En Pasco, el 84 % de la luz proviene de
+   distritos mineros (incluida la ciudad de Cerro de Pasco).
+
+**Validación:** el ranking de área minera recupera las grandes operaciones del país:
+Antapaccay (Espinar), Toquepala (Ilabaya), Cuajone (Torata), Cerro Verde (Yarabamba),
+Antamina (San Marcos), Yanacocha (Cajamarca) y Las Bambas (Challhuahuacho).
+
+## 5. Limitaciones
+
+- La luz es una aproximación de la actividad económica, no el PBI: las minas iluminan
+  sus instalaciones aunque eso no se traduzca en ingresos para la población local.
+- Es una correlación, no un efecto causal: las minas se ubican donde hay mineral, y eso
+  puede coincidir con vías, ciudades o altitud.
+- Se usa 2021 porque es el último año con luces nacionales en el dataset del curso y
+  con PBI departamental disponible para validar; el raster minero refleja minas de
+  alrededor de 2019.
+- Resolución de ~1 km: los distritos urbanos pequeños quedan representados por pocos
+  píxeles. El raster minero mide superficie intervenida, no producción.

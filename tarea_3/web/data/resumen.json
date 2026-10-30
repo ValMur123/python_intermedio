@@ -1,0 +1,148 @@
+{
+  "anio": 2021,
+  "n_distritos": 1873,
+  "n_mineros": 129,
+  "pct_mineros": 6.887346502936466,
+  "area_minera_km2": 892.3572936207056,
+  "mediana_luz_minero": 29.07124900817871,
+  "mediana_luz_no_minero": 4.105625152587891,
+  "ratio_medianas": 7.080833716603253,
+  "luz_media_km2_minero": 0.31781536555584167,
+  "luz_media_km2_no_minero": 1.53574885134692,
+  "area_mediana_minero": 377.0615854213486,
+  "area_mediana_no_minero": 194.5958947771146,
+  "modelos": {
+    "simple": {
+      "coef": 1.2942257339603132,
+      "se": 0.15947249017875031,
+      "t": 8.115667677288007,
+      "r2": 0.02810873724148988,
+      "n": 1873,
+      "veces_mas_luz": 3.6481702260290274
+    },
+    "area": {
+      "coef": 1.373167272958888,
+      "se": 0.16235765789071263,
+      "t": 8.457668648331971,
+      "r2": 0.03771578707535972,
+      "n": 1873,
+      "veces_mas_luz": 3.947834785135484
+    },
+    "completo": {
+      "coef": 1.2886411612643986,
+      "se": 0.16958569652282196,
+      "t": 7.5987609078279785,
+      "r2": 0.29031868106970393,
+      "n": 1873,
+      "veces_mas_luz": 3.6278535370102003
+    }
+  },
+  "robustez_umbral": [
+    {
+      "umbral_km2": 0,
+      "n_mineros": 129,
+      "coef": 1.2886411612643986,
+      "t": 7.5987609078279785,
+      "veces_mas_luz": 3.6278535370102003
+    },
+    {
+      "umbral_km2": 1,
+      "n_mineros": 84,
+      "coef": 1.970940529674009,
+      "t": 10.630573102358568,
+      "veces_mas_luz": 7.177423894937289
+    },
+    {
+      "umbral_km2": 5,
+      "n_mineros": 38,
+      "coef": 2.6807290199863436,
+      "t": 10.236078488328106,
+      "veces_mas_luz": 14.595729997108974
+    },
+    {
+      "umbral_km2": 10,
+      "n_mineros": 26,
+      "coef": 3.117177368397455,
+      "t": 11.368655045804026,
+      "veces_mas_luz": 22.582547386164908
+    }
+  ],
+  "corr_luz_pbi_dep": 0.9314218706833557,
+  "corr_luz_pbi_dep_sin_lima": 0.8849605159921683,
+  "dep_mayor_pct_luz_minera": {
+    "departamento": "PASCO",
+    "pct": 83.67486867469049
+  },
+  "top_distritos_mineros": [
+    {
+      "DISTRITO": "ESPINAR",
+      "PROVINCIA": "ESPINAR",
+      "DEPARTAMEN": "CUSCO",
+      "mina_km2": 52.66,
+      "luz_total": 735.86
+    },
+    {
+      "DISTRITO": "ILABAYA",
+      "PROVINCIA": "JORGE BASADRE",
+      "DEPARTAMEN": "TACNA",
+      "mina_km2": 47.09,
+      "luz_total": 537.23
+    },
+    {
+      "DISTRITO": "TORATA",
+      "PROVINCIA": "MARISCAL NIETO",
+      "DEPARTAMEN": "MOQUEGUA",
+      "mina_km2": 41.29,
+      "luz_total": 1091.83
+    },
+    {
+      "DISTRITO": "YARABAMBA",
+      "PROVINCIA": "AREQUIPA",
+      "DEPARTAMEN": "AREQUIPA",
+      "mina_km2": 41.01,
+      "luz_total": 859.67
+    },
+    {
+      "DISTRITO": "SAN MARCOS",
+      "PROVINCIA": "HUARI",
+      "DEPARTAMEN": "ANCASH",
+      "mina_km2": 40.17,
+      "luz_total": 396.97
+    },
+    {
+      "DISTRITO": "MARCONA",
+      "PROVINCIA": "NASCA",
+      "DEPARTAMEN": "ICA",
+      "mina_km2": 39.86,
+      "luz_total": 549.88
+    },
+    {
+      "DISTRITO": "CAJAMARCA",
+      "PROVINCIA": "CAJAMARCA",
+      "DEPARTAMEN": "CAJAMARCA",
+      "mina_km2": 39.83,
+      "luz_total": 1017.97
+    },
+    {
+      "DISTRITO": "CHALLHUAHUACHO",
+      "PROVINCIA": "COTABAMBAS",
+      "DEPARTAMEN": "APURIMAC",
+      "mina_km2": 38.06,
+      "luz_total": 651.95
+    },
+    {
+      "DISTRITO": "ANANEA",
+      "PROVINCIA": "SAN ANTONIO DE PUTINA",
+      "DEPARTAMEN": "PUNO",
+      "mina_km2": 35.29,
+      "luz_total": 103.73
+    },
+    {
+      "DISTRITO": "YAULI",
+      "PROVINCIA": "YAULI",
+      "DEPARTAMEN": "JUNIN",
+      "mina_km2": 27.87,
+      "luz_total": 315.13
+    }
+  ]
+}
