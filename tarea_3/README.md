@@ -33,4 +33,17 @@ Todos los datos se descargan con `python scripts/obtener_datos.py`. Los rasters 
 suben al repositorio por su tamaño; quedan en el caché local de Hugging Face. El PBI se
 guarda en `datos/originales/pbi_departamental_bcrp.csv`.
 
-datos/originales/rutas_rasters.json
+## 3. Procesamiento
+
+`scripts/procesar_datos.py` pasa de píxeles a una tabla con una fila por distrito
+(*zonal statistics*, como en la sesión 07-raster):
+
+- **Limpieza:** valores negativos de VIIRS (resta de fondo del sensor) recortados a 0;
+  `nodata` declarado en cada raster; nombres normalizados (sin tildes, en mayúsculas).
+- **Transformación:** área de cada distrito calculada en un CRS métrico (EPSG:24891);
+  Callao sumado a Lima para coincidir con el PBI del INEI.
+- **Indicadores:** luz total, luz por km², km² de área minera, distrito minero (sí/no),
+  intensidad minera (pequeña <1 km², media 1-10 km², grande ≥10 km²) y % de la luz de
+  cada departamento que proviene de distritos mineros.
+
+Resultado: 1 873 distritos, de los cuales 129 tienen actividad minera detectada.
