@@ -80,3 +80,19 @@ Antamina (San Marcos), Yanacocha (Cajamarca) y Las Bambas (Challhuahuacho).
   alrededor de 2019.
 - Resolución de ~1 km: los distritos urbanos pequeños quedan representados por pocos
   píxeles. El raster minero mide superficie intervenida, no producción.
+
+  ## 6. Dashboard
+
+🔗 **Dashboard público:** https://valmur123.github.io/python_intermedio/tarea_3/web/
+
+Construido con HTML, CSS y D3.js (`web/`). Incluye 4 KPIs, 6 visualizaciones (mapa
+distrital, ranking, distribución por intensidad minera, luz vs. área, luz vs. PBI y peso
+minero por departamento) y 4 controles: departamento, grupo de distritos, indicador y
+buscador de distritos, además de descarga del CSV filtrado.
+
+Para verlo localmente:
+
+    cd tarea_3/web
+    python -m http.server 8000
+
+y abrir http://localhost:8000
