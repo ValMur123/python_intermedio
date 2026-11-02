@@ -4,7 +4,7 @@ Tarea 3 · Python Intermedio · Diplomado PUCP 2026 · Alessandra Murga
 
 🔗 **Dashboard público:** https://valmur123.github.io/python_intermedio/tarea_3/web/
 🎬 **Reel:** [`reel/reel.mp4`](reel/reel.mp4)
-💼 **Publicación de LinkedIn:** LINK_LINKEDIN
+💼 **Publicación de LinkedIn:** https://lnkd.in/p/eNnU7ijr
 
 ## 1. Tema y pregunta de investigación
 
