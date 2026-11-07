@@ -6,6 +6,7 @@
 
 Las cuentas las hace Python, no el modelo: así cada cifra sale de una llamada que se puede repetir.
 """
+import json
 import re
 import time
 import unicodedata
@@ -227,9 +228,32 @@ def comparar_periodos(codigo: str, desde_a: str, hasta_a: str, desde_b: str, has
             "fuentes": [a["fuente"], b["fuente"]]}
 
 
-# TODO 4 · Un recurso, por ejemplo la plantilla bcrp://serie/{codigo} con la ficha de la serie.
+@mcp.resource("bcrp://serie/{codigo}", mime_type="application/json")
+def ficha_serie(codigo: str) -> str:
+    """Ficha descriptiva de una serie del BCRP: nombre, frecuencia, desde cuándo hay datos y última actualización.
 
-# TODO 5 · Un prompt, por ejemplo informe(tema) que pida citar el código y el periodo de cada cifra.
+    Ejemplo: bcrp://serie/PN01273PM. No descarga datos: para eso usen serie o resumen.
+    """
+    f = _ficha(codigo)
+    ficha = {"codigo": f["codigo"], "nombre": f["nombre"], "frecuencia": f["frecuencia"],
+             "datos_desde": f["inicio"], "ultima_actualizacion": f["actualizada"], "categoria": f["categoria"],
+             "fuente": URL_CATALOGO}
+    return json.dumps(ficha, ensure_ascii=False, indent=2)
+
+
+@mcp.prompt
+def informe(tema: str) -> str:
+    """Pide un informe breve sobre un tema económico usando solo las herramientas del servidor BCRP."""
+    pasos = [
+        f"Redacta un informe breve sobre «{tema}» con datos oficiales del BCRP.",
+        "1. Busca la serie con buscar_series (prueba con pocas palabras si no aparece) y confirma su ficha en bcrp://serie/{codigo}.",
+        "2. Para variaciones, promedios, máximos y mínimos usa resumen; para comparar dos tramos (por ejemplo antes y después de una fecha) usa comparar_periodos. No calcules nada a mano.",
+        "3. Cita en cada cifra el código de la serie, el periodo y la fuente (la URL que devuelve la herramienta).",
+        "4. Si una serie es una tasa, expresa sus cambios en puntos porcentuales y no en %.",
+        "5. Si una herramienta falla o no hay datos, dilo; no inventes cifras.",
+        "6. Presenta los resultados como asociaciones descriptivas, no como causalidad demostrada.",
+    ]
+    return "\n".join(pasos)
 
 
 if __name__ == "__main__":
