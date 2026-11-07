@@ -11,7 +11,7 @@
 
 | Fuente | Datos | Procesamiento |
 |---|---|---|
-| BCRP, servidor MCP `bcrp` | PN01273PM (IPC), PN09822PM (alimentos y bebidas), PN01279PM (subyacente); IPC de Lima Metropolitana, var. % a 12 meses, mensual | `buscar_series` para confirmar códigos, `serie` para los datos (guardados en `salidas/bcrp_inflacion_2020_2024.csv`), `resumen` y `comparar_periodos` como contraste. `scripts/grafico_bcrp.py` lee solo ese CSV y calcula todos los indicadores (`salidas/indicadores_bcrp.csv`), incluida la brecha alimentos − subyacente. |
+| BCRP, servidor MCP `bcrp` | PN01273PM (IPC), PN09822PM (alimentos y bebidas), PN01279PM (subyacente); IPC de Lima Metropolitana, var. % a 12 meses, mensual | `buscar_series` para confirmar códigos, `serie` para los datos (descargados con `scripts/descargar_bcrp.py`, que llama a esa herramienta en memoria con `fastmcp.Client` y escribe `salidas/bcrp_inflacion_2020_2024.csv`), `resumen` y `comparar_periodos` como contraste. `scripts/grafico_bcrp.py` lee solo ese CSV y calcula todos los indicadores (`salidas/indicadores_bcrp.csv`), incluida la brecha alimentos − subyacente. |
 | INEI, ENAHO 2024 (módulos 34 y 02) | Residentes habituales, n = 108,664 | Skill `limpiando-enaho` (validación en `salidas/validacion.txt`), `graficando-enaho` (barras) y `mapeando-enaho` (mapa). Porcentajes de personas ponderados con `facpob07`. |
 
 Indicadores: promedio, máximo y mínimo de cada serie, promedio por tramo (2020-2021, 2022-2023, 2024), brecha alimentos − subyacente (pp), pobreza monetaria (% de personas) por área y departamento.
@@ -57,7 +57,7 @@ Validación ENAHO (todas las esenciales aprobadas): 108,664 residentes habituale
 
 | Elemento | Archivo |
 |---|---|
-| Series BCRP (salida de la herramienta `serie`) | `salidas/bcrp_inflacion_2020_2024.csv` |
+| Series BCRP (salida de la herramienta `serie`) | `scripts/descargar_bcrp.py` → `salidas/bcrp_inflacion_2020_2024.csv` |
 | Gráfico e indicadores BCRP | `scripts/grafico_bcrp.py` → `figuras/inflacion_lima_2020_2024.png`, `salidas/indicadores_bcrp.csv` |
 | Limpieza ENAHO | `.claude/skills/limpiando-enaho/scripts/limpiar.py` → `salidas/personas_2024.parquet`, `salidas/validacion.txt`, `salidas/indicadores.csv` |
 | Gráficos ENAHO | `.claude/skills/graficando-enaho/scripts/graficar.py` → `figuras/` |
@@ -70,6 +70,7 @@ Comandos (desde `tarea_4/`):
 uv run .claude/skills/limpiando-enaho/scripts/limpiar.py --anio 2024
 uv run .claude/skills/graficando-enaho/scripts/graficar.py
 uv run .claude/skills/mapeando-enaho/scripts/mapear.py
+uv run scripts/descargar_bcrp.py
 uv run scripts/grafico_bcrp.py
 ```
 
