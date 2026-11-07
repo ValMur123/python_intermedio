@@ -1,0 +1,32 @@
+nivel,codigo,nombre,indicador,pct_ponderado,n_personas_muestra
+nacional,PE,Perú,pobreza,27.53,108664
+nacional,PE,Perú,pobreza_extrema,5.5,108664
+area,urbano,Urbano,pobreza,24.74,72593
+area,rural,Rural,pobreza,39.44,36071
+sexo,1,Hombre,pobreza,27.37,52587
+sexo,2,Mujer,pobreza,27.68,56077
+departamento,01,AMAZONAS,pobreza,26.08,3911
+departamento,02,ANCASH,pobreza,22.88,4576
+departamento,03,APURIMAC,pobreza,24.09,2500
+departamento,04,AREQUIPA,pobreza,15.77,4645
+departamento,05,AYACUCHO,pobreza,33.04,3308
+departamento,06,CAJAMARCA,pobreza,44.99,4468
+departamento,07,CALLAO,pobreza,33.77,3457
+departamento,08,CUSCO,pobreza,18.54,3777
+departamento,09,HUANCAVELICA,pobreza,33.61,3244
+departamento,10,HUANUCO,pobreza,39.47,3903
+departamento,11,ICA,pobreza,5.91,4838
+departamento,12,JUNIN,pobreza,18.61,4658
+departamento,13,LA LIBERTAD,pobreza,30.07,5028
+departamento,14,LAMBAYEQUE,pobreza,14.05,4405
+departamento,15,LIMA,pobreza,26.89,14823
+departamento,16,LORETO,pobreza,42.61,5678
+departamento,17,MADRE DE DIOS,pobreza,11.14,2045
+departamento,18,MOQUEGUA,pobreza,10.88,2511
+departamento,19,PASCO,pobreza,39.28,2746
+departamento,20,PIURA,pobreza,31.81,5876
+departamento,21,PUNO,pobreza,40.42,3112
+departamento,22,SAN MARTIN,pobreza,21.99,4619
+departamento,23,TACNA,pobreza,23.88,3622
+departamento,24,TUMBES,pobreza,26.6,2771
+departamento,25,UCAYALI,pobreza,27.12,4143

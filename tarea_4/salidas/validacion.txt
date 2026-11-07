@@ -1,0 +1,59 @@
+VALIDACIÓN ENAHO 2024 — limpiando-enaho
+============================================================
+
+[APROBADO] (esencial) Columnas en minúscula
+           personas (117721, 40), sumaria (33691, 163); columna del año: 'año' presente = True
+[APROBADO] (esencial) Variables requeridas presentes
+           todas presentes
+[APROBADO] (esencial) Llaves conglome/vivienda/hogar como texto, sin perder ceros iniciales
+           conglome con cero inicial en 117,721 filas; longitudes {'conglome': [6], 'vivienda': [3], 'hogar': [2]}
+[APROBADO] (esencial) Año de la encuesta = 2024
+           personas y sumaria
+[APROBADO] (esencial) Residentes habituales
+           108,664 de 117,721 filas del módulo 02 (referencia 108,664)
+[APROBADO] (esencial) Sin duplicados de persona (conglome, vivienda, hogar, codperso)
+           duplicados: 0
+[APROBADO] (esencial) Llaves únicas en la sumaria
+           33,691 hogares, duplicados: 0
+[APROBADO] (esencial) Merge m:1 sin pérdida ni duplicación de filas
+           filas antes 108,664, después 108,664, sin hogar en la sumaria: 0
+[APROBADO] (informativa) estrato y ubigeo de personas coinciden con la sumaria
+           100.00 % de coincidencia
+[APROBADO] (esencial) 25 códigos departamentales, Lima (15) y Callao (07) separados
+           25 códigos: 01…25; 07 y 15 presentes: True
+[APROBADO] (esencial) estrato sin nulos, pobreza en {1,2,3}, p207 en {1,2}
+           pobreza: [1, 2, 3]; estrato nulos: 0
+[APROBADO] (esencial) facpob07 sin nulos y positivo
+           nulos 0, ceros o negativos 0; población expandida 34,147,768
+[APROBADO] (informativa) La ponderación se aplicó (ponderado ≠ promedio simple)
+           ponderado 27.53 % vs simple 25.61 %
+[APROBADO] (esencial) Pobreza monetaria nacional (personas, facpob07)
+           27.53 % vs referencia 27.6 % (tolerancia 0.1 pp)
+[APROBADO] (informativa) Pobreza monetaria nacional (sumaria, factor07×mieperho)
+           27.58 % vs referencia 27.6 % (tolerancia 0.1 pp)
+[APROBADO] (informativa) Pobreza urbana
+           24.74 % vs referencia 24.8 % (tolerancia 0.2 pp)
+[APROBADO] (informativa) Pobreza rural
+           39.44 % vs referencia 39.3 % (tolerancia 0.2 pp)
+[APROBADO] (informativa) Pobreza extrema nacional
+           5.50 % vs referencia 5.5 % (tolerancia 0.2 pp)
+[APROBADO] (informativa) Pobreza Lima Metropolitana (dominio 8)
+           28.03 % vs referencia 28.2 % (tolerancia 0.2 pp)
+[APROBADO] (informativa) Pobreza departamental (sumaria, factor07×mieperho) vs referencias/pobreza_departamento_2024.csv
+           máxima diferencia 0.05 pp en 01 (AMAZONAS); 25/25 dentro de 0.2 pp
+
+CONTRASTE DE MÉTODOS (pobreza monetaria, %)
+               sumaria factor07×mieperho   personas facpob07  diferencia pp
+  nacional                         27.58               27.53           0.05
+  urbano                           24.81               24.74           0.07
+  rural                            39.30               39.44          -0.14
+  Difieren porque la sumaria cubre todos los hogares (33,691) con factor07×mieperho, mientras que
+  personas usa solo residentes habituales (108,664) con facpob07, un factor de persona distinto.
+
+POBREZA DEPARTAMENTAL: la referencia de la sesión 16 se reproduce con el método de la sumaria.
+  Con personas y facpob07 (indicadores.csv) la diferencia máxima es 0.52 pp en 21 (PUNO); 16/25 dentro de 0.2 pp.
+  Es la misma diferencia de factores del contraste anterior, más marcada en muestras departamentales pequeñas.
+
+
+============================================================
+RESULTADO: APROBADO (todas las validaciones esenciales pasaron)
