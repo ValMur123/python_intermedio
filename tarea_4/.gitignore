@@ -1,0 +1,8 @@
+**/datos/
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+*.tmp
+*.log
+.DS_Store
