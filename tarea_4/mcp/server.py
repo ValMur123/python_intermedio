@@ -176,16 +176,8 @@ def serie(codigo: str, desde: str, hasta: str) -> dict:
     return _serie(codigo, desde, hasta)
 
 
-@mcp.tool(annotations=SOLO_LECTURA)
-def resumen(codigo: str, desde: str, hasta: str) -> dict:
-    """Calcula con Python el resumen de una serie del BCRP entre dos fechas: primero, último, cambio, variación %,
-    promedio, máximo y mínimo (estos con su periodo).
-
-    Úsala siempre que pregunten por variaciones, promedios o extremos de una serie, en vez de calcular a mano con
-    los datos de serie(). Mismas fechas que serie(): "2025-01" (mensual), "2025-01-15" (diaria), "2025" (anual).
-    Ejemplo: codigo="PN01273PM", desde="2025-12", hasta="2026-09". Ojo: si la serie ya es una tasa (por ejemplo
-    inflación a 12 meses), "cambio" son puntos porcentuales y "variacion_pct" es el cambio relativo de la tasa.
-    """
+def _resumen(codigo, desde, hasta):
+    """Lógica de resumen(), separada para que comparar_periodos la reutilice."""
     r = _serie(codigo, desde, hasta)
     d = r["datos"]
     primero, ultimo = d[0], d[-1]
@@ -199,11 +191,41 @@ def resumen(codigo: str, desde: str, hasta: str) -> dict:
             "fuente": r["fuente"]}
 
 
-# TODO 3 · Una herramienta suya, bien descrita. Ideas:
-#   - comparar_paises con la API del Banco Mundial, que tampoco pide clave:
-#     https://api.worldbank.org/v2/country/PER;CHL;COL/indicator/NY.GDP.MKTP.KD.ZG?format=json&date=2015:2025
-#   - correlacion(codigo_a, codigo_b, desde, hasta)
-#   - grafico(codigo, desde, hasta) que guarde un PNG en salidas/ y devuelva la ruta
+@mcp.tool(annotations=SOLO_LECTURA)
+def resumen(codigo: str, desde: str, hasta: str) -> dict:
+    """Calcula con Python el resumen de una serie del BCRP entre dos fechas: primero, último, cambio, variación %,
+    promedio, máximo y mínimo (estos con su periodo).
+
+    Úsala siempre que pregunten por variaciones, promedios o extremos de una serie, en vez de calcular a mano con
+    los datos de serie(). Mismas fechas que serie(): "2025-01" (mensual), "2025-01-15" (diaria), "2025" (anual).
+    Ejemplo: codigo="PN01273PM", desde="2025-12", hasta="2026-09". Ojo: si la serie ya es una tasa (por ejemplo
+    inflación a 12 meses), "cambio" son puntos porcentuales y "variacion_pct" es el cambio relativo de la tasa.
+    """
+    return _resumen(codigo, desde, hasta)
+
+
+@mcp.tool(annotations=SOLO_LECTURA)
+def comparar_periodos(codigo: str, desde_a: str, hasta_a: str, desde_b: str, hasta_b: str) -> dict:
+    """Compara el comportamiento de una serie del BCRP en dos tramos: promedio, máximo y mínimo de cada uno
+    (con su periodo) y la diferencia de promedios B − A.
+
+    Úsala para preguntas del tipo "¿cómo estaba el indicador antes y después de X?": inflación antes y después de
+    2022, tipo de cambio en dos gobiernos, reservas en dos crisis. Si solo importa un tramo, usa resumen.
+    Ejemplo: codigo="PN01273PM" (inflación a 12 meses), desde_a="2018-01", hasta_a="2021-12",
+    desde_b="2022-01", hasta_b="2025-12". Las fechas siguen el formato de serie() y los tramos no deben pedir
+    meses sin datos. "diferencia_promedios" está en las unidades de la serie: si la serie es una tasa (%), son
+    puntos porcentuales (pp), no un cambio relativo. Es una comparación descriptiva, no prueba causalidad.
+    Devuelve la URL de la fuente de cada tramo.
+    """
+    a = _resumen(codigo, desde_a, hasta_a)
+    b = _resumen(codigo, desde_b, hasta_b)
+    tramo = lambda r, d, h: {"desde": d, "hasta": h, "n_datos": r["n_datos"], "promedio": r["promedio"],
+                             "maximo": r["maximo"], "minimo": r["minimo"], "fuente": r["fuente"]}
+    return {"codigo": codigo, "nombre": a["nombre"], "frecuencia": a["frecuencia"],
+            "tramo_a": tramo(a, desde_a, hasta_a), "tramo_b": tramo(b, desde_b, hasta_b),
+            "diferencia_promedios": b["promedio"] - a["promedio"],
+            "fuentes": [a["fuente"], b["fuente"]]}
+
 
 # TODO 4 · Un recurso, por ejemplo la plantilla bcrp://serie/{codigo} con la ficha de la serie.
 

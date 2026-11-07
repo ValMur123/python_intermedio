@@ -69,3 +69,25 @@ def test_un_recurso():
 
 def test_un_prompt():
     assert len(asyncio.run(_con_cliente(lambda c: c.list_prompts()))) >= 1
+
+
+# --- Pruebas propias (comparar_periodos) ---
+
+def test_comparar_periodos_coincide_con_resumen():
+    c = llamar("comparar_periodos", codigo="PN01273PM", desde_a="2019-01", hasta_a="2019-12",
+               desde_b="2023-01", hasta_b="2023-12")
+    a = llamar("resumen", codigo="PN01273PM", desde="2019-01", hasta="2019-12")
+    b = llamar("resumen", codigo="PN01273PM", desde="2023-01", hasta="2023-12")
+    assert c["tramo_a"]["promedio"] == pytest.approx(a["promedio"])
+    assert c["tramo_b"]["maximo"] == b["maximo"]
+    assert c["diferencia_promedios"] == pytest.approx(b["promedio"] - a["promedio"])
+    assert len(c["fuentes"]) == 2 and all(u.startswith("https://estadisticas.bcrp.gob.pe") for u in c["fuentes"])
+
+
+def test_comparar_periodos_error_claro():
+    with pytest.raises(ToolError, match="XX999"):
+        llamar("comparar_periodos", codigo="XX999", desde_a="2019-01", hasta_a="2019-12",
+               desde_b="2023-01", hasta_b="2023-12")
+    with pytest.raises(ToolError, match="PN01273PM"):     # el tramo B no tiene datos todavía
+        llamar("comparar_periodos", codigo="PN01273PM", desde_a="2019-01", hasta_a="2019-12",
+               desde_b="2099-01", hasta_b="2099-12")
