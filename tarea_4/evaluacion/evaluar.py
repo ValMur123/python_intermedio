@@ -40,7 +40,8 @@ INSTRUCCION = (
     "en que los pide y en la unidad que corresponde. Si la pregunta pide un mes, indícalo en «periodo» (AAAA-MM). "
     "En «fuente» di de dónde sale cada cifra. En «interpretacion» da una explicación breve (1 a 3 frases) cuando la "
     "pregunta pida interpretar; si no, déjala vacía. Si no puedes saber una cifra con certeza, pon null en su lugar: "
-    "no estimes.\n\n"
+    "no estimes. Si tienes herramientas disponibles, úsalas para obtener y verificar la cifra; no respondas de "
+    "memoria si puedes consultarla.\n\n"
 )
 
 # Rutas con respuestas esperadas o transcripciones: el modo B no puede leerlas con la herramienta Read.

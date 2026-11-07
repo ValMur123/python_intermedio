@@ -4,6 +4,14 @@ Script: `evaluacion/evaluar.py`. Cada pregunta corre con `claude -p`, con el mis
 instrucción y una sesión independiente (`--no-session-persistence`). Las preguntas se ejecutan una por una
 (`--paralelo 1`) para que los tiempos sean comparables.
 
+## Ajuste posterior al piloto
+
+El piloto (q01 y q05 en los dos modos, `evaluacion/resultados_prueba.csv`, que se conserva como evidencia) mostró que
+en q05 el modo B respondió de memoria sin usar herramientas. Por eso se agregó a la instrucción común, idéntica en
+los dos modos, la frase: «Si tienes herramientas disponibles, úsalas para obtener y verificar la cifra; no respondas
+de memoria si puedes consultarla.» El piloto se corrió con la instrucción anterior, sin esa frase.
+No se modificó ninguna pregunta ni ninguna respuesta esperada.
+
 ## Qué tiene habilitado cada modo
 
 | | Modo A (sin MCP ni Skills) | Modo B (con MCP y Skills) |
