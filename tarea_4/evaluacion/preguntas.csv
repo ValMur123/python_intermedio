@@ -1,0 +1,11 @@
+id,tipo,pregunta,verdad,unidad,tolerancia,fuente_verdad
+q01,bcrp,"¿Cuál fue la inflación interanual (variación del IPC en 12 meses) de Lima Metropolitana en setiembre de 2026, en %?",4.5487,%,0.05,"BCRP, serie PN01273PM, 2026-09 (sesión 04)"
+q02,bcrp,"¿Cuál era la tasa de referencia de la política monetaria del BCRP en setiembre de 2026, en %?",4.25,%,0.01,"BCRP, serie PD04722MM, 2026-09 (sesión 04)"
+q03,bcrp,"¿Cuál fue el tipo de cambio interbancario venta del 15 de octubre de 2026 según el BCRP, en soles por dólar?",3.4282,S/ por US$,0.002,"BCRP, serie PD04638PD, 2026-10-15 (sesión 04)"
+q04,bcrp,"¿Cuál fue la inflación interanual de alimentos (variación en 12 meses) de Lima Metropolitana en setiembre de 2026 según el BCRP, en %?",,%,0.05,"BCRP, serie PN09822PM, 2026-09 (pendiente: tabla web del BCRP)"
+q05,enaho,"¿Cuál fue la tasa de pobreza monetaria nacional en 2024, en %?",27.6,%,0.5,"INEI, Evolución de la Pobreza Monetaria 2015-2024, p. 65"
+q06,enaho,"¿Cuál fue la tasa de pobreza monetaria en el área rural en 2024, en %?",39.3,%,0.5,"INEI, Evolución de la Pobreza Monetaria 2015-2024, p. 65"
+q07,enaho,"¿Cuál fue la tasa de pobreza monetaria del departamento de Cajamarca en 2024, en %?",45.0,%,0.5,"INEI, Evolución de la Pobreza Monetaria 2015-2024, p. 72"
+q08,enaho,"¿Cuál fue la tasa de pobreza monetaria del departamento de Ica en 2024, en %?",6.0,%,0.5,"INEI, Evolución de la Pobreza Monetaria 2015-2024, p. 72"
+q09,combinada,"Reporta la tasa de pobreza monetaria rural de 2024 (ENAHO) y la inflación interanual de Lima Metropolitana en diciembre de 2025 (BCRP). Con esas dos cifras, ¿qué se puede decir del riesgo para los hogares rurales pobres?",39.3|1.5088,%|%,0.5|0.05,"INEI, Evolución de la Pobreza Monetaria 2015-2024, p. 65 | BCRP, serie PN01273PM, 2025-12 (sesión 04)"
+q10,combinada,"Reporta la tasa de pobreza monetaria nacional de 2024 (ENAHO) y el crecimiento del PBI real del Perú en 2025 (BCRP). ¿Es coherente decir que la economía creció mientras más de una cuarta parte de la población seguía en pobreza?",27.6|3.4306,%|%,0.5|0.05,"INEI, Evolución de la Pobreza Monetaria 2015-2024, p. 65 | BCRP, serie PM04923AA, 2025 (sesión 04)"
