@@ -9,15 +9,19 @@ Denominador: gashog2d (gasto total bruto, el gasto de la medición oficial de po
 Ponderación: factor07 × mieperho (personas), igual que el método oficial de la sumaria.
 
 Definiciones de alimentos (columna `definicion`):
-  validada  Numerador validado por la estudiante, con sumaria-2024-12g.dta: grupo 1 (alimentos dentro del
-            hogar, 6 formas: gru11hd..gru16hd), grupo 11 alimentos fuera del hogar (gru111hd..gru116hd) y
-            alimentos preparados ambulantes (gru111hd2..gru116hd2). Sin alcohol, tabaco ni mascotas.
-  inei      Contraste: alimentos según el do-file oficial del INEI (ConstVarGasto, sumaria-2024.dta): dentro
-            del hogar + fuera del hogar (g05hd*, ig06hd) + instituciones benéficas (sg23, sig24) + otros
-            fuera del hogar (gru14hd*, sg25..sig28). Con las demás partidas suma exactamente gashog2d.
+  inei      PRINCIPAL. Alimentos según el do-file oficial del INEI (ConstVarGasto, sumaria-2024.dta), 26
+            variables: grupo 1 alimentos (gru11hd, gru12hd1/2, gru13hd1..3), alimentos fuera del hogar (g05hd*,
+            ig06hd), instituciones benéficas (sg23, sig24) y otros (gru14hd*, sg25..sig28). Con las partidas de
+            los demás grupos (que incluyen sg42*, g07hd, ig08hd) suma exactamente gashog2d.
+  sensibilidad_12g  Definición inicial de la estudiante, con sumaria-2024-12g.dta: grupo 1 (alimentos dentro
+            del hogar, 6 formas: gru11hd..gru16hd), grupo 11 alimentos fuera del hogar (gru111hd..gru116hd) y
+            alimentos preparados ambulantes (gru111hd2..gru116hd2). Omite g05hd*, ig06hd y sg23..sig28, por lo
+            que subestima el gasto en alimentos; se conserva como sensibilidad.
 
 Cifra principal: cociente de totales ponderados, sum(alim·w) / sum(gashog2d·w).
 Complemento: promedio ponderado de la participación de cada hogar, sum(w·alim/gasto) / sum(w).
+Las diferencias entre grupos (pobre − no pobre, rural − urbano) se calculan aquí, con valores sin redondear,
+y se guardan en el CSV con nivel `diferencia_pp`.
 """
 from __future__ import annotations
 
@@ -91,6 +95,9 @@ def cargar() -> pd.DataFrame:
     assert cuadre < 0.05, f"El do-file del INEI no reconstruye gashog2d (dif. máx. {cuadre:.3f})"
     assert df[["gashog2d", "factor07", "mieperho"]].notna().all().all() and (df.gashog2d > 0).all()
     assert (df.alim_validada <= df.gashog2d + 1e-6).all() and (df.alim_inei <= df.gashog2d + 1e-6).all()
+    # El numerador del INEI no debe contener partidas de otros grupos (equipamiento, otros gastos).
+    assert not set(INEI_ALIMENTOS) & set(INEI_RESTO)
+    assert not [c for c in INEI_ALIMENTOS if c.startswith(("sg42", "g07", "ig08"))]
     df["w"] = df.factor07 * df.mieperho
     df["pobre"] = df.pobreza <= 2
     df["urbano"] = df.estrato <= 5
@@ -112,17 +119,29 @@ def filas(df: pd.DataFrame) -> pd.DataFrame:
         ("pobreza_area", "no pobre rural"): ~df.pobre & ~df.urbano,
     }
     out = []
-    for definicion in ("validada", "inei"):
-        alim = df[f"alim_{definicion}"]
+    for definicion, col in (("inei", "alim_inei"), ("sensibilidad_12g", "alim_validada")):
+        alim = df[col]
+        exacto = {}  # valores sin redondear, para las diferencias
         for (nivel, grupo), m in cortes.items():
             d, a = df[m], alim[m]
             w = d.w
+            cociente = 100 * (a * w).sum() / (d.gashog2d * w).sum()
+            promedio = 100 * np.average(a / d.gashog2d, weights=w)
+            exacto[grupo] = (cociente, promedio)
             out.append({
-                "definicion": definicion, "nivel": nivel, "grupo": grupo,
+                "definicion": definicion, "nivel": nivel, "grupo": grupo, "unidad": "% del gasto total",
                 "n_hogares": len(d),
                 "hogares_participacion_cero": int((a == 0).sum()),
-                "pct_cociente_totales": round(100 * (a * w).sum() / (d.gashog2d * w).sum(), 2),
-                "pct_promedio_hogares": round(100 * np.average(a / d.gashog2d, weights=w), 2),
+                "pct_cociente_totales": round(cociente, 2),
+                "pct_promedio_hogares": round(promedio, 2),
+            })
+        for grupo, (x, y) in {"pobre − no pobre": ("pobre", "no pobre"),
+                              "rural − urbano": ("rural", "urbano")}.items():
+            out.append({
+                "definicion": definicion, "nivel": "diferencia_pp", "grupo": grupo, "unidad": "pp",
+                "n_hogares": "", "hogares_participacion_cero": "",
+                "pct_cociente_totales": round(exacto[x][0] - exacto[y][0], 2),
+                "pct_promedio_hogares": round(exacto[x][1] - exacto[y][1], 2),
             })
     return pd.DataFrame(out)
 
@@ -133,13 +152,17 @@ def main() -> None:
     t = filas(df)
     SALIDA.parent.mkdir(exist_ok=True)
     t.to_csv(SALIDA, index=False, encoding="utf-8")
-    cero = df.alim_validada == 0
-    print(f"Hogares con participación 0 % (definición validada): {int(cero.sum())} "
-          f"({100 * cero.mean():.2f} % de hogares; {100 * df.w[cero].sum() / df.w.sum():.2f} % de personas)")
-    print(f"  de ellos con alimentos > 0 según la definición del INEI (rubros no incluidos en la validada): "
-          f"{int(((df.alim_inei > 0) & cero).sum())}; sin alimentos en ninguna: {int((df.alim_inei == 0).sum())}")
-    print(f"Gasto anual en alimentos por hogar (promedio sin ponderar, soles): validada "
-          f"{df.alim_validada.mean():,.0f}; INEI {df.alim_inei.mean():,.0f}; gasto total {df.gashog2d.mean():,.0f}")
+    for nombre, col in (("INEI (principal)", "alim_inei"), ("sensibilidad 12g", "alim_validada")):
+        cero = df[col] == 0
+        print(f"Hogares con participación 0 % ({nombre}): {int(cero.sum())} "
+              f"({100 * cero.mean():.2f} % de hogares; {100 * df.w[cero].sum() / df.w.sum():.2f} % de personas); "
+              f"pobres: {int((cero & df.pobre).sum())}")
+    cero12 = df.alim_validada == 0
+    print(f"  de los {int(cero12.sum())} de la sensibilidad 12g, con alimentos > 0 según el INEI: "
+          f"{int(((df.alim_inei > 0) & cero12).sum())}")
+    print(f"Gasto anual en alimentos por hogar (promedio sin ponderar, soles): INEI "
+          f"{df.alim_inei.mean():,.0f}; sensibilidad 12g {df.alim_validada.mean():,.0f}; "
+          f"gasto total {df.gashog2d.mean():,.0f}")
     print(t.to_string(index=False))
     print(f"\nGuardado: {SALIDA.relative_to(RAIZ)}")
 

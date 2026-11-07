@@ -1,19 +1,23 @@
-definicion,nivel,grupo,n_hogares,hogares_participacion_cero,pct_cociente_totales,pct_promedio_hogares
-validada,total,todos hogares,33691,135,31.27,36.13
-validada,pobreza,pobre,6812,38,42.05,44.27
-validada,pobreza,no pobre,26879,97,29.27,33.03
-validada,area,urbano,22031,104,29.8,33.53
-validada,area,rural,11660,31,43.19,47.14
-validada,pobreza_area,pobre urbano,3377,26,40.38,41.54
-validada,pobreza_area,no pobre urbano,18654,78,28.02,30.88
-validada,pobreza_area,pobre rural,3435,12,49.85,51.56
-validada,pobreza_area,no pobre rural,8225,19,40.96,44.28
-inei,total,todos hogares,33691,31,41.97,46.57
-inei,pobreza,pobre,6812,16,52.97,53.97
-inei,pobreza,no pobre,26879,15,39.94,43.75
-inei,area,urbano,22031,22,40.2,43.73
-inei,area,rural,11660,9,56.45,58.57
-inei,pobreza_area,pobre urbano,3377,12,50.95,50.91
-inei,pobreza_area,no pobre urbano,18654,10,38.38,41.37
-inei,pobreza_area,pobre rural,3435,4,62.45,62.15
-inei,pobreza_area,no pobre rural,8225,5,54.44,56.26
+definicion,nivel,grupo,unidad,n_hogares,hogares_participacion_cero,pct_cociente_totales,pct_promedio_hogares
+inei,total,todos hogares,% del gasto total,33691,31,41.97,46.57
+inei,pobreza,pobre,% del gasto total,6812,16,52.97,53.97
+inei,pobreza,no pobre,% del gasto total,26879,15,39.94,43.75
+inei,area,urbano,% del gasto total,22031,22,40.2,43.73
+inei,area,rural,% del gasto total,11660,9,56.45,58.57
+inei,pobreza_area,pobre urbano,% del gasto total,3377,12,50.95,50.91
+inei,pobreza_area,no pobre urbano,% del gasto total,18654,10,38.38,41.37
+inei,pobreza_area,pobre rural,% del gasto total,3435,4,62.45,62.15
+inei,pobreza_area,no pobre rural,% del gasto total,8225,5,54.44,56.26
+inei,diferencia_pp,pobre − no pobre,pp,,,13.03,10.22
+inei,diferencia_pp,rural − urbano,pp,,,16.25,14.84
+sensibilidad_12g,total,todos hogares,% del gasto total,33691,135,31.27,36.13
+sensibilidad_12g,pobreza,pobre,% del gasto total,6812,38,42.05,44.27
+sensibilidad_12g,pobreza,no pobre,% del gasto total,26879,97,29.27,33.03
+sensibilidad_12g,area,urbano,% del gasto total,22031,104,29.8,33.53
+sensibilidad_12g,area,rural,% del gasto total,11660,31,43.19,47.14
+sensibilidad_12g,pobreza_area,pobre urbano,% del gasto total,3377,26,40.38,41.54
+sensibilidad_12g,pobreza_area,no pobre urbano,% del gasto total,18654,78,28.02,30.88
+sensibilidad_12g,pobreza_area,pobre rural,% del gasto total,3435,12,49.85,51.56
+sensibilidad_12g,pobreza_area,no pobre rural,% del gasto total,8225,19,40.96,44.28
+sensibilidad_12g,diferencia_pp,pobre − no pobre,pp,,,12.78,11.24
+sensibilidad_12g,diferencia_pp,rural − urbano,pp,,,13.39,13.61
