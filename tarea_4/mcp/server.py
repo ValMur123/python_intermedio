@@ -176,7 +176,27 @@ def serie(codigo: str, desde: str, hasta: str) -> dict:
     return _serie(codigo, desde, hasta)
 
 
-# TODO 2 · resumen(codigo, desde, hasta)
+@mcp.tool(annotations=SOLO_LECTURA)
+def resumen(codigo: str, desde: str, hasta: str) -> dict:
+    """Calcula con Python el resumen de una serie del BCRP entre dos fechas: primero, último, cambio, variación %,
+    promedio, máximo y mínimo (estos con su periodo).
+
+    Úsala siempre que pregunten por variaciones, promedios o extremos de una serie, en vez de calcular a mano con
+    los datos de serie(). Mismas fechas que serie(): "2025-01" (mensual), "2025-01-15" (diaria), "2025" (anual).
+    Ejemplo: codigo="PN01273PM", desde="2025-12", hasta="2026-09". Ojo: si la serie ya es una tasa (por ejemplo
+    inflación a 12 meses), "cambio" son puntos porcentuales y "variacion_pct" es el cambio relativo de la tasa.
+    """
+    r = _serie(codigo, desde, hasta)
+    d = r["datos"]
+    primero, ultimo = d[0], d[-1]
+    mx = max(d, key=lambda x: x["valor"])
+    mn = min(d, key=lambda x: x["valor"])
+    var = (ultimo["valor"] / primero["valor"] - 1) * 100 if primero["valor"] != 0 else None
+    return {"codigo": codigo, "nombre": r["nombre"], "frecuencia": r["frecuencia"], "n_datos": len(d),
+            "primero": primero, "ultimo": ultimo,
+            "cambio": ultimo["valor"] - primero["valor"], "variacion_pct": var,
+            "promedio": sum(x["valor"] for x in d) / len(d), "maximo": mx, "minimo": mn,
+            "fuente": r["fuente"]}
 
 
 # TODO 3 · Una herramienta suya, bien descrita. Ideas:
