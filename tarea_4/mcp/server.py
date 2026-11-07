@@ -7,7 +7,9 @@
 Las cuentas las hace Python, no el modelo: así cada cifra sale de una llamada que se puede repetir.
 """
 import re
+import time
 import unicodedata
+from datetime import date
 from functools import cache
 from pathlib import Path
 
@@ -78,19 +80,104 @@ def buscar_series(texto: str, frecuencia: str | None = None, limite: int = 10) -
     return [_ficha(c) for c in orden.sort_values(["vieja", "largo"]).head(limite).codigo]
 
 
-# TODO 1 · serie(codigo, desde, hasta) -> {"codigo", "nombre", "frecuencia", "datos": [{"periodo", "valor"}], "fuente"}
-#   La API se llama así: f"{API}/{codigo}/json/{desde}/{hasta}" y responde
-#   {"config": {...}, "periods": [{"name": "Ene.2025", "values": ["0.81"]}, ...]}
-#   - Fechas que pide la API: 2025-1 (mensual y trimestral), 2025-01-15 (diaria), 2025 (anual).
-#   - Nombres que devuelve: "Ene.2025" (mensual), "01.Oct.26" (diaria), "T1.25" (trimestral), "2025" (anual).
-#     Setiembre viene como "Set". Devuelvan el periodo como "2025-01", "2026-10-01", "2025-T1" o "2025".
-#   - Salten los valores "n.d." y usen la frecuencia de _ficha(codigo) para saber qué formato pedir.
-#   - Si recibe muchos pedidos seguidos, la API responde una página HTML en vez de JSON: esperen unos segundos y
-#     reintenten (y guarden en caché lo que ya bajaron).
-#   - Un código que no existe debe dar un ToolError que diga el código.
+MESES = {"Ene": 1, "Feb": 2, "Mar": 3, "Abr": 4, "May": 5, "Jun": 6,
+         "Jul": 7, "Ago": 8, "Set": 9, "Sep": 9, "Oct": 10, "Nov": 11, "Dic": 12}   # setiembre: según la serie llega como Set o Sep
+FORMATOS = {"Mensual", "Trimestral", "Diaria", "Anual"}
+INTENTOS = 5
 
-# TODO 2 · resumen(codigo, desde, hasta): primero, ultimo, cambio, variacion_pct, promedio, maximo y minimo
-#   (los tres últimos con su periodo). Úsenla para que el modelo nunca haga cuentas a mano.
+
+def _fecha_api(fecha, frecuencia):
+    """Lleva "2025-01" (o "2025-1", "2025-01-15", "2025") al formato que pide la API según la frecuencia."""
+    partes = str(fecha).strip().split("-")
+    try:
+        nums = [int(x) for x in partes]
+    except ValueError:
+        raise ToolError(f"Fecha inválida {fecha!r}: usen 2025-01 (mensual), 2025-01-15 (diaria) o 2025 (anual).")
+    if frecuencia == "Anual":
+        return str(nums[0])
+    if frecuencia == "Diaria":
+        if len(nums) != 3:
+            raise ToolError(f"La serie es diaria: la fecha {fecha!r} debe ser AAAA-MM-DD.")
+        return f"{nums[0]}-{nums[1]:02d}-{nums[2]:02d}"
+    if len(nums) < 2:
+        raise ToolError(f"La serie es {frecuencia.lower()}: la fecha {fecha!r} debe ser AAAA-M (por ejemplo 2025-1).")
+    return f"{nums[0]}-{nums[1]}"      # mensual y trimestral: sin cero a la izquierda
+
+
+def _anio(dos_digitos):
+    """Año de 2 dígitos a 4: si supera al año actual en 2 dígitos es del siglo pasado (97 -> 1997, 26 -> 2026)."""
+    return (1900 if dos_digitos > date.today().year % 100 else 2000) + dos_digitos
+
+
+def _periodo(nombre, frecuencia):
+    """Convierte el nombre que devuelve la API ("Ene.2025", "01.Oct.26", "T1.25", "2025") a un periodo ordenable."""
+    try:
+        if frecuencia == "Anual":
+            return str(int(nombre))
+        if frecuencia == "Mensual":
+            mes, anio = nombre.split(".")
+            return f"{int(anio)}-{MESES[mes]:02d}"
+        if frecuencia == "Diaria":
+            dia, mes, anio = nombre.split(".")
+            return f"{_anio(int(anio))}-{MESES[mes]:02d}-{int(dia):02d}"
+        if frecuencia == "Trimestral":
+            trim, anio = nombre.split(".")
+            return f"{_anio(int(anio))}-T{int(trim.lstrip('T'))}"
+    except (ValueError, KeyError):
+        pass
+    raise ToolError(f"No pude interpretar el periodo {nombre!r} de una serie {frecuencia.lower()}.")
+
+
+@cache
+def _descargar(codigo, desde, hasta):
+    """Pide la serie a la API. Si responde HTML (límite de pedidos) espera y reintenta. Los errores no se guardan en caché."""
+    url = f"{API}/{codigo}/json/{desde}/{hasta}"
+    ultimo = ""
+    for intento in range(1, INTENTOS + 1):
+        try:
+            r = httpx.get(url, timeout=60)
+            return url, r.json()
+        except (httpx.HTTPError, ValueError) as e:      # ValueError: llegó HTML en vez de JSON
+            ultimo = f"{type(e).__name__}: {e}"[:150]
+            if intento < INTENTOS:
+                time.sleep(2 * intento)
+    raise ToolError(f"El BCRP no respondió con datos para {codigo} ({desde} a {hasta}) tras {INTENTOS} intentos. "
+                    f"Esperen unos segundos y reintenten. Último error: {ultimo}")
+
+
+def _serie(codigo, desde, hasta):
+    """Lógica de serie(), separada para que resumen y otras herramientas la reutilicen."""
+    f = _ficha(codigo)
+    frec = f["frecuencia"]
+    if frec not in FORMATOS:
+        raise ToolError(f"La serie {codigo} tiene frecuencia {frec!r}, que serie() no sabe consultar.")
+    url, js = _descargar(codigo, _fecha_api(desde, frec), _fecha_api(hasta, frec))
+    datos = []
+    for p in js.get("periods", []):
+        v = p["values"][0] if p.get("values") else "n.d."
+        if v in ("n.d.", "", None):
+            continue
+        datos.append({"periodo": _periodo(p["name"], frec), "valor": float(v)})
+    if not datos:
+        raise ToolError(f"La serie {codigo} no tiene datos entre {desde} y {hasta}. Prueben con otro rango.")
+    return {"codigo": codigo, "nombre": f["nombre"], "frecuencia": frec, "datos": datos, "fuente": url}
+
+
+@mcp.tool(annotations=SOLO_LECTURA)
+def serie(codigo: str, desde: str, hasta: str) -> dict:
+    """Descarga los datos de una serie del BCRP entre dos fechas, ambas incluidas.
+
+    Úsala cuando ya tengas el código (búscalo antes con buscar_series). Fechas según la frecuencia de la serie:
+    "2025-01" (mensual y trimestral), "2025-01-15" (diaria), "2025" (anual). Ejemplo: codigo="PN01271PM",
+    desde="2025-01", hasta="2025-12". Devuelve los periodos como "2025-01", "2026-10-01", "2025-T1" o "2025",
+    los valores numéricos (se omiten los n.d.) y la URL de la fuente. Si hay muchos datos y solo quieres variaciones,
+    promedios o extremos, usa resumen en vez de calcular a mano.
+    """
+    return _serie(codigo, desde, hasta)
+
+
+# TODO 2 · resumen(codigo, desde, hasta)
+
 
 # TODO 3 · Una herramienta suya, bien descrita. Ideas:
 #   - comparar_paises con la API del Banco Mundial, que tampoco pide clave:
