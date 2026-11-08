@@ -209,9 +209,6 @@ Las conversaciones con Claude Code, con la información sensible oculta, están 
 | [`evidencias_ia/mcp/`](evidencias_ia/mcp/) | Construcción y pruebas del servidor MCP (Parte 1) |
 | [`evidencias_ia/skills/`](evidencias_ia/skills/) | Creación y activación de las tres Skills (Parte 2) |
 | [`evidencias_ia/integracion/`](evidencias_ia/integracion/) | Ejecución integrada, hallazgo del gasto en alimentos y sesión de la Parte 3 |
-| `evidencias_ia/evaluacion/` | Reservada para las evidencias de la Parte 4 |
+| [`evidencias_ia/evaluacion/`](evidencias_ia/evaluacion/) | Capturas de la sesión de la Parte 4: preguntas, experimento, resultados y comparación (`eva_1.png` a `eva_22.png`) |
 
-Cada parte se trabajó en una issue de GitHub, con commits que la referencian. Las decisiones de diseño y las
-correcciones las revisó y validó la estudiante: la definición del gasto en alimentos, las cifras de referencia del
-INEI y las calificaciones de coherencia de q09 y q10 son suyas. Los incidentes del proceso (errores y reintentos) están
-registrados en los archivos de cada carpeta.
+Cada parte se trabajó en un issue de GitHub (#11, #12 y #13), con commits que lo referencian. Usé asistentes de IA para escribir y depurar código, pero las decisiones de análisis las tomé yo: validé las variables de la definición del gasto en alimentos y elegí la definición oficial del INEI; propuse usar el método de la sumaria (factor07 × mieperho) para contrastar con la pobreza oficial; verifiqué a mano las cifras del informe en las tablas web del BCRP y en el informe técnico del INEI (informes/verificacion.md), y revisé y aprobé las calificaciones de coherencia de q09 y q10 según evaluacion/criterios.md. También detecté y pedí corregir errores del proceso, como el CSV del BCRP transcrito a mano (reemplazado por scripts/descargar_bcrp.py) y la omisión de componentes en la definición de alimentos. Los incidentes del proceso (errores y reintentos) están registrados en los archivos de cada carpeta y en evidencias_ia/.
