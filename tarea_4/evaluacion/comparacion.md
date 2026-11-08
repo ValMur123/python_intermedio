@@ -37,9 +37,11 @@ Por qué mejoraron:
 
 ## Principales errores
 
-1. **q08 en el modo B (Ica, pobreza 2024): no encontró la cifra.** `buscar_series` no tiene series de pobreza y los
-   permisos de `Bash` (solo `uv run`) le impidieron leer los archivos locales. Respondió null y lo explicó. Quedó
-   «no sabe», no una cifra errónea. Este caso muestra que el modo B depende de que la herramienta correcta exista y esté
+1. **q08 en el modo B (Ica, pobreza 2024): no encontró la cifra.** Quedó «no sabe», no una cifra errónea. La causa
+   (que `buscar_series` no tiene series de pobreza y que `Bash` no pudo leer los archivos locales) **es lo que declaró
+   el agente en su respuesta; no se verificó en el stream**, que no se guardó. Lo único que consta en `resultados.csv`
+   es la respuesta null, la fuente declarada y un intento de `ls` marcado en `accesos_sospechosos`. Si la explicación
+   del agente es cierta, este caso muestra que el modo B depende de que la herramienta correcta exista y esté
    permitida, y no de que el modelo «sepa más».
 2. **q10 en el modo A: respuesta incompleta.** Dio 27.6 (pobreza nacional) de memoria, que era correcto, pero dejó null
    la inflación subyacente y no pudo decir si estaba dentro del rango meta. Reconoció que no podía verificarla. Es una
@@ -77,10 +79,17 @@ muestra. Sirve de punto de referencia: lo que el modo B aporta es la capacidad d
 ## Conclusión
 
 Para datos oficiales recientes o exactos, como las series del BCRP de 2024 y 2026, un MCP vale la pena: sin él, el
-modelo no puede responder, y con él responde con la cifra y el código de la serie, aunque tarde más del doble. Para la
-ENAHO, este experimento no demuestra el valor de las Skills, porque el modo B leyó resultados ya generados en lugar de
-ejecutarlas. Su ventaja práctica sería la reproducibilidad y la trazabilidad del cálculo, y eso habría que medirlo
-pidiendo que se ejecuten desde cero. Una limitación del MCP y de las skills es su cobertura: q08 falló porque ninguna
-herramienta cubría esa consulta con los permisos dados. Un MCP o una Skill se justifican cuando la información no está en
-el modelo, cuando importa citar la fuente y cuando el costo en tiempo es aceptable. Si el modelo ya conoce el dato y
-una cifra aproximada basta, el beneficio es menor.
+modelo no puede responder, y con él responde con la cifra y el código de la serie, aunque tarde más del doble.
+
+Sobre las Skills, en este experimento su aporte fue indirecto. El modo B respondió las preguntas de ENAHO con salidas
+generadas y validadas por las Skills (pobreza nacional 27.6 %, 108,664 residentes habituales) sin ejecutarlas en la
+sesión. Lo que se midió, entonces, es que el agente encuentra y cita resultados confiables ya producidos, no que las
+Skills calculen la cifra en el momento. Su ejecución y su encadenamiento sí se demostraron fuera de este experimento:
+en la Parte 2 (`evidencias_ia/skills/`) y en la ejecución integrada de la Parte 3 (`evidencias_ia/integracion/`).
+Una mejora futura sería correr el modo B sin `salidas/` disponible, para obligarlo a ejecutar las Skills y medir su
+valor directamente.
+
+Un MCP o una Skill se justifican cuando la información no está en el modelo, cuando importa citar la fuente y cuando el
+costo en tiempo es aceptable. Tienen una limitación de cobertura: q08 no se resolvió porque, según el agente, ninguna
+herramienta cubría esa consulta con los permisos dados. Si el modelo ya conoce el dato y una cifra aproximada basta, el
+beneficio es menor.
