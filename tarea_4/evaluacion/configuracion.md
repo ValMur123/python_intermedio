@@ -50,6 +50,11 @@ sesión (evento `init` del stream). Así queda comprobado y no solo declarado.
   argumento mencione `evaluacion`, `preguntas.csv`, `referencias` o `evidencias_ia`. Se revisa antes de analizar.
 - **Las herramientas usadas se leen del stream** (`--output-format stream-json --verbose`), contando los bloques
   `tool_use`. `StructuredOutput`, que Claude Code usa para entregar el JSON, no se cuenta.
+- **Llamada a `Grep` sin resolver.** En q10 del modo B, `herramientas_usadas` registra un `Grep x1`, aunque `Grep` no
+  estaba habilitado (`disponibles` no lo lista). No se sabe si la llamada se ejecutó o fue rechazada: el stream de la
+  corrida original no se guardó (`--no-session-persistence`, y `evaluar.py` solo conserva el resumen). Se intentó
+  repetir q10 en modo B guardando el stream, pero la repetición se trabó y se detuvo sin resultado. Queda como
+  limitación sin resolver. `resultados.csv` conserva la corrida original sin cambios.
 - **Memoria del modelo.** En la prueba corta, el modo A respondió q05 (pobreza nacional 2024, 27.6 %) de memoria y
   acertó. Las cifras de la ENAHO publicadas antes del corte de conocimiento pueden salir correctas sin herramientas.
   No se cambian las preguntas por esto, porque la verdad y las preguntas no se modifican tras ver resultados.
